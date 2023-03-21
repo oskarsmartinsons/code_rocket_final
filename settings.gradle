@@ -1,0 +1,5 @@
+rootProject.name = 'smart-request'
+include 'smart-request-app'
+include 'smart-request-domain'
+include 'smart-request-repository'
+
