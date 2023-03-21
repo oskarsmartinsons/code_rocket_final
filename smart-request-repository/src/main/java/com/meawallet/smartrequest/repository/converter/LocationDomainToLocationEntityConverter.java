@@ -8,6 +8,8 @@ import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Component;
 import org.springframework.core.convert.converter.Converter;
 
+import java.util.Optional;
+
 
 @Component
 @AllArgsConstructor
@@ -19,13 +21,18 @@ public class LocationDomainToLocationEntityConverter implements Converter<Locati
     public LocationEntity convert(Location location) {
 
        //  var temperatureEntity = conversionService.convert(location.getTemperature(), TemperatureEntity.class);
-        var temperatureEntity = temperatureDomainToTemperatureEntityConverter.convert(location.getTemperature());
+       // var temperatureEnt = location.getTemperature() != null ? temperatureDomainToTemperatureEntityConverter.convert()
+        //var temperatureEntity = temperatureDomainToTemperatureEntityConverter.convert(location.getTemperature());
+
+        var temp = Optional.ofNullable(location.getTemperature())
+                .map(temperatureDomainToTemperatureEntityConverter::convert)
+                .orElse(null);
 
         return LocationEntity.builder()
                 .id(location.getId())
                 .latitude(location.getLatitude())
                 .longitude(location.getLongitude())
-                .temperature(temperatureEntity)
+                .temperature(temp)
                 .build();
     }
 }

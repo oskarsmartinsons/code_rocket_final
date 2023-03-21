@@ -12,8 +12,7 @@ public class SaveLocationService implements SaveLocationUseCase {
     private final SaveLocationPort saveLocationPort;
 
     @Override
-    public void saveLocation(Location location) {
-
-        saveLocationPort.saveLocation(location);
+    public Location saveLocation(Location location) {
+        return saveLocationPort.saveLocation(location);
     }
 }

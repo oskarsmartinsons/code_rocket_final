@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -24,6 +25,8 @@ public class TemperatureEntity {
     private BigDecimal temperature;
     @Column(name = "unit")
     private String unit;
-    @Column(name = "time_stamp")
-    private LocalDate timeStamp;
+    @Column(name = "current_hour")
+    private LocalDateTime currentHour;
+//    @Column(name = "time_stamp")
+//    private LocalDate time_stamp;
 }
