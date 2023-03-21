@@ -1,13 +1,17 @@
 package com.meawallet.smartrequest.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 import lombok.Value;
 
 @Value
-@Builder
+@Builder(toBuilder = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class Location {
     Integer id;
-    String latitude;
-    String longitude;
+    Double latitude;
+    Double longitude;
     Temperature temperature;
 }

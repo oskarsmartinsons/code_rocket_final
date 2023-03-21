@@ -8,6 +8,6 @@ import java.util.Optional;
 @Repository
 public interface LocationRepository extends JpaRepository<LocationEntity, Integer> {
 
-    Optional<LocationEntity> findById(Integer id);
+//    Optional<LocationEntity> findById(Integer id);
 
 }

@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    implementation project(":smart-request-in")
     implementation project(":smart-request-repository")
 
     implementation 'org.springframework.boot:spring-boot-starter-web:3.0.3'

@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
+@Builder(toBuilder = true)
 @Entity
 @Table(name = "locations")
 @AllArgsConstructor
@@ -17,9 +17,9 @@ public class LocationEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "lat")
-    private String latitude;
+    private Double latitude;
     @Column(name = "lon")
-    private Integer longitude;
+    private Double longitude;
     @OneToOne
     @JoinColumn(name = "temp_id", referencedColumnName = "id")
     private TemperatureEntity temperature;

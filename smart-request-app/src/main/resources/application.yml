@@ -1,3 +1,7 @@
 logging:
   level:
     com.meawallet.smartrequest: DEBUG
+
+spring:
+  jpa:
+    show-sql: true
