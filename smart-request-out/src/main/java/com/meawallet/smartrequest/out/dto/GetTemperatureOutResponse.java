@@ -1,48 +1,15 @@
 package com.meawallet.smartrequest.out.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
-public record GetTemperatureOutResponse (
-//    @JsonProperty(value = "id")
-//    String externalId,
-/*    @JsonProperty(value = "temperature")
-    String temperature,*/
-    @JsonProperty(value = "time")
-    String time
+import java.time.LocalDateTime;
 
-
-){
+@Data
+@Builder(toBuilder = true)
+@AllArgsConstructor
+@NoArgsConstructor
+public class GetTemperatureOutResponse {
+    LocalDateTime time;
+    Double airTemperature;
 }
-
-/*public class WeatherData {
-    private List<TimeSeries> timeseries;
-
-    // getters and setters
-}
-
-public class TimeSeries {
-    private String time;
-    private Data data;
-
-    // getters and setters
-}*/
-
-/*public class Data {
-    private Instant instant;
-
-    // getters and setters
-}
-
-public class Instant {
-    private Details details;
-
-    // getters and setters
-}
-
-public class Details {
-    @JsonProperty("air_temperature")
-    private double airTemperature;
-
-    // getters and setters
-}*/
-

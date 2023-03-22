@@ -3,6 +3,7 @@ package com.meawallet.smartrequest.out;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.meawallet.smartrequest.core.port.out.GetTemperatureFromExtApiPort;
 import com.meawallet.smartrequest.domain.Temperature;
@@ -20,6 +21,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.Collections;
 import java.util.List;
 
 @Slf4j
@@ -37,35 +42,57 @@ public class GetTemperatureFromExtApiAdapter implements GetTemperatureFromExtApi
             headers.set("User-Agent", "SmartRequest1.0"); // Set a unique identifier as the User-Agent header
 
             HttpEntity<String> entity = new HttpEntity<>(null, headers);
-
-            ResponseEntity<String> response = restTemplate.exchange("https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=" + latitude + "&lon=" + longitude, HttpMethod.GET, entity, String.class);
-
-/*            var response = restTemplate.getForEntity(weatherApiConfig.getWeatherUrl(), GetTemperatureOutResponse.class)
-                    .getBody();*/
-
-            String jsonResponse = response.getBody();
-
-            log.debug("json {}", jsonResponse);
+            String jsonResponse = restTemplate
+                    .exchange("https://api.met.no/weatherapi/locationforecast/2.0/compact?lat="
+                            + latitude + "&lon=" + longitude, HttpMethod.GET, entity, String.class)
+                    .getBody();
 
             ObjectMapper objectMapper = new ObjectMapper();
-            TypeReference<List<GetTemperatureOutResponse>> typeReference = new TypeReference<>() {};
-            List<GetTemperatureOutResponse> tempData = objectMapper.readValue(jsonResponse, typeReference);
+            JsonNode filteredJsonNodes = objectMapper.readTree(jsonResponse).at("/properties/timeseries");
 
-            log.debug("tempData {}", tempData);
+            var getTemperatureOutResponse = returnTemperatureForCurrentHour(filteredJsonNodes);
 
-          //  log.debug("Received response: {}", response);
-
-         //   return getTemperatureOutResponseToTemperatureConverter.convert(response);
-         //   System.out.println(response.getBody());
-
-            return null;
+            return getTemperatureOutResponseToTemperatureConverter.convert(getTemperatureOutResponse);
 
         } catch (RestClientException restClientException) {
             log.error("Received error from guard API: {}", restClientException.getMessage());
             throw new RuntimeException(restClientException);
 
         } catch (JsonProcessingException e) {
+            log.error("Received error when parsing Json response: {}", e.getMessage());
             throw new RuntimeException(e);
         }
+    }
+
+    private GetTemperatureOutResponse returnTemperatureForCurrentHour(JsonNode jsonNodes) {
+
+        var getTemperatureOutResponse = new GetTemperatureOutResponse();
+
+        for (JsonNode node : jsonNodes) {
+            String time = node.get("time").asText();
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
+            LocalDateTime timeInResponse = LocalDateTime.parse(time, formatter);
+
+            if(timeInResponse.equals(getCurrentTimeInRoundHours())) {
+
+                double airTemperature = node.at("/data/instant/details/air_temperature").asDouble();
+
+                getTemperatureOutResponse = getTemperatureOutResponse.toBuilder()
+                        .airTemperature(airTemperature)
+                        .time(timeInResponse)
+                        .build();
+
+                log.debug("Found air temperature in json response {}:", getTemperatureOutResponse);
+            }
+        }
+        return getTemperatureOutResponse;
+    }
+
+    private LocalDateTime getCurrentTimeInRoundHours() {
+        return LocalDateTime.now()
+                .truncatedTo(ChronoUnit.MINUTES)
+                .withMinute(0)
+                .withSecond(0);
     }
 }

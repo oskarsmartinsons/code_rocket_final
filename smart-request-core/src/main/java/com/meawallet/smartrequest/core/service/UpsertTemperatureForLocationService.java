@@ -2,6 +2,7 @@ package com.meawallet.smartrequest.core.service;
 
 import com.meawallet.smartrequest.core.port.in.UpsertTemperatureForLocationUseCase;
 import com.meawallet.smartrequest.core.port.out.FindByLatitudeAndLongitudePort;
+import com.meawallet.smartrequest.core.port.out.GetTemperatureFromExtApiPort;
 import com.meawallet.smartrequest.core.port.out.SaveLocationPort;
 import com.meawallet.smartrequest.core.port.out.SaveTemperaturePort;
 import com.meawallet.smartrequest.domain.Location;
@@ -19,9 +20,12 @@ public class UpsertTemperatureForLocationService implements UpsertTemperatureFor
     private final FindByLatitudeAndLongitudePort findByLatitudeAndLongitudePort;
     private final GetTemperatureExternalService getTemperatureExternalService;
 
+    private final GetTemperatureFromExtApiPort getTemperatureFromExtApiPort;
+
     @Override
     public Temperature upsertTemperatureForLocation(Double latitude, Double longitude) {
-        var temperature = getTemperatureExternalService.getExtTemperature();
+     //   var temperature = getTemperatureExternalService.getExtTemperature();
+        var temperature = getTemperatureFromExtApiPort.getTemperatureFromExtApi(latitude, longitude);
         log.debug("Temperature from 3rd party service: {}", temperature);
 
         var savedTemperature = saveTemperaturePort.saveTemperature(temperature);
