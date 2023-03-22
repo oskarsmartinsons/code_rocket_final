@@ -4,4 +4,5 @@ include 'smart-request-domain'
 include 'smart-request-repository'
 include 'smart-request-core'
 include 'smart-request-in'
+include 'smart-request-out'
 
