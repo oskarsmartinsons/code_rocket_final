@@ -10,8 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import java.util.Optional;
-
 @Slf4j
 @Component
 @AllArgsConstructor
@@ -29,9 +27,33 @@ public class UpsertTemperatureForLocationService implements UpsertTemperatureFor
         var savedTemperature = saveTemperaturePort.saveTemperature(temperature);
         log.debug("Saved Temperature: {}", savedTemperature);
 
+        var locationWithTemperature = Location.builder()
+                .latitude(latitude)
+                .longitude(longitude)
+                .temperature(savedTemperature)
+                .build();
 
+        upsertLocation(locationWithTemperature);
 
+        //  upsertLocation(latitude, longitude, savedTemperature);
 
+        return savedTemperature;
+
+    }
+
+    private void upsertLocation(Location location) {
+        var existingLocation = findByLatitudeAndLongitudePort
+                .findLocationByLatitudeAndLongitude(location.getLatitude(), location.getLongitude());
+
+        if (existingLocation.isEmpty()) {
+            saveLocationPort.saveLocation(location);
+        } else {
+            saveLocationPort.saveLocation(existingLocation.get());
+
+        }
+    }
+
+/*    private void upsertLocation(Double latitude, Double longitude, Temperature savedTemperature) {
         var location = findByLatitudeAndLongitudePort.findLocationByLatitudeAndLongitude(latitude, longitude)
                 .orElseGet(Location::new);
         log.debug("This is findLocationByLatLon result: {}", location);
@@ -45,8 +67,5 @@ public class UpsertTemperatureForLocationService implements UpsertTemperatureFor
         log.debug("This is locationWithTemperature result: {}", locationWithTemperature);
 
         saveLocationPort.saveLocation(locationWithTemperature);
-
-        return savedTemperature;
-
-    }
+    }*/
 }
