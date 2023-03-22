@@ -27,6 +27,6 @@ public class TemperatureEntity {
     private String unit;
     @Column(name = "current_hour")
     private LocalDateTime currentHour;
-//    @Column(name = "time_stamp")
-//    private LocalDate time_stamp;
+    @Column(name = "time_stamp")
+    private LocalDate timeStamp;
 }

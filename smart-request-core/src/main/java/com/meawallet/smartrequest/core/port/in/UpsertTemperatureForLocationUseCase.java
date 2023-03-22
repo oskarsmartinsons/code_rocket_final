@@ -4,5 +4,5 @@ import com.meawallet.smartrequest.domain.Location;
 import com.meawallet.smartrequest.domain.Temperature;
 
 public interface UpsertTemperatureForLocationUseCase {
-    Temperature upsertTemperatureForLocation(Location location);
+    Temperature upsertTemperatureForLocation(Double latitude, Double longitude);
 }

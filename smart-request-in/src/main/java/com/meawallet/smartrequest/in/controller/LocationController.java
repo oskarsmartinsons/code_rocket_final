@@ -1,5 +1,6 @@
 package com.meawallet.smartrequest.in.controller;
 
+import com.meawallet.smartrequest.core.port.in.GetLocationTemperatureUseCase;
 import com.meawallet.smartrequest.core.port.in.GetLocationUseCase;
 import com.meawallet.smartrequest.core.port.in.SaveLocationUseCase;
 import com.meawallet.smartrequest.core.port.in.SaveTemperatureUseCase;
@@ -28,6 +29,8 @@ public class LocationController {
     private final SaveLocationUseCase saveLocationUseCase;
     private final SaveTemperatureUseCase saveTemperatureUseCase;
     private final UpsertTemperatureForLocationService upsertTemperatureForLocationService;
+
+    private final GetLocationTemperatureUseCase getLocationTemperatureUseCase;
     private final GetTemperatureExternalService getTemperatureExternalService;
 
     @PostMapping(value = "/locations")
@@ -42,31 +45,10 @@ public class LocationController {
         return getLocationUseCase.getLocationById(id);
     }
     @GetMapping(value = "/weather")
-    public Temperature getLocationTemperature(@RequestParam("id") Integer number, @RequestParam("id2") Double number2) {
-       // log.debug("Received find LOCATION by id request: {}", id);
-        var location = getLocationUseCase.getLocation(number);
+    public Temperature getLocationTemperature(@RequestParam("lat") Double latitude, @RequestParam("lon") Double longitude) {
+        log.debug("Received GET Temp by coordinates: {} , {}", latitude, longitude);
 
-        var loc = Location.builder()
-                .latitude(1.0)
-                .longitude(2.0)
-                .build();
-
-        // if valid return if not - upsert temperature and return
-
-//        var temp = location.getTemperature() != null
-//                ? location.getTemperature() : getTemperatureExternalService.getExtTemperature();
-
-//        var savedTemp = saveTemperatureUseCase.saveTemperature(temp);
-//
-//        var locationWithTemperature = location.toBuilder()
-//                .temperature(savedTemp)
-//                .build();
-//
-//        saveLocationUseCase.saveLocation(locationWithTemperature);
-        log.debug("This is my location in memory: {}", location);
-
-        return  location != null
-                ? location.getTemperature() : upsertTemperatureForLocationService.upsertTemperatureForLocation(loc);
+        return getLocationTemperatureUseCase.getTemperatureByCoordinates(latitude, longitude);
     }
 
     @GetMapping(value = "/test")
