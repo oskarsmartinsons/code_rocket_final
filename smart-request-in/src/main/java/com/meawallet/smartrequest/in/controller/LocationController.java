@@ -7,6 +7,7 @@ import com.meawallet.smartrequest.domain.Location;
 import com.meawallet.smartrequest.domain.Temperature;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,10 +37,4 @@ public class LocationController {
         return getLocationTemperatureUseCase.getTemperatureByCoordinates(latitude, longitude);
     }
 
-    @ExceptionHandler
-  //  @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public String handle(Exception e) {
-
-        return e.getMessage() + e.getCause();
-    }
 }

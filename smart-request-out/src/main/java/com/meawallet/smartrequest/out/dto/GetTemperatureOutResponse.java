@@ -1,12 +1,13 @@
 package com.meawallet.smartrequest.out.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.*;
 import java.time.LocalDateTime;
 
 @Data
-@Builder(toBuilder = true)
-@AllArgsConstructor
-@NoArgsConstructor
+@Builder
+//@NoArgsConstructor
+@JsonDeserialize(using = GetTemperatureOutResponseDeserializer.class)
 public class GetTemperatureOutResponse {
     LocalDateTime time;
     Double airTemperature;

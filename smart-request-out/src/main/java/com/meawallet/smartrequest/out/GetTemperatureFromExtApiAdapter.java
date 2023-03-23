@@ -1,32 +1,24 @@
 package com.meawallet.smartrequest.out;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.meawallet.smartrequest.core.port.out.GetTemperatureFromExtApiPort;
 import com.meawallet.smartrequest.domain.Temperature;
 import com.meawallet.smartrequest.out.config.WeatherApiConfig;
-import com.meawallet.smartrequest.out.converter.GetTemperatureOutResponseToTemperatureConverter;
 import com.meawallet.smartrequest.out.dto.GetTemperatureOutResponse;
-import com.meawallet.smartrequest.out.dto.TemperatureDto;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.jni.Library;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
-
+import java.io.IOException;
 import java.time.*;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.util.Collections;
 import java.util.List;
 
 @Slf4j
@@ -36,66 +28,47 @@ public class GetTemperatureFromExtApiAdapter implements GetTemperatureFromExtApi
     private final RestTemplate restTemplate;
     private final WeatherApiConfig weatherApiConfig;
     private final ConversionService conversionService;
+    private final ObjectMapper objectMapper;
     @Override
     public Temperature getTemperatureFromExtApi(Double latitude, Double longitude) {
         try {
-            HttpHeaders headers = new HttpHeaders();
-            headers.set("User-Agent", "SmartRequest1.0");
-            HttpEntity<String> entity = new HttpEntity<>(null, headers);
+            var listOfGetTemperatureOutResponse = getResponseFromWeatherApi(latitude, longitude);
+            var getTemperatureOutResponse =  listOfGetTemperatureOutResponse.stream()
+                    .filter(t->t.getTime().equals(getCurrentTimeInRoundHours()))
+                    .findFirst()
+                    .orElseThrow(()-> new RestClientException("Temperature in external API not Found."));
+            log.debug("Found air temperature in json response {}:", getTemperatureOutResponse);
 
-            String urlWeatherApi = weatherApiConfig.getWeatherUrl() + "?lat=" + latitude + "&lon=" + longitude;
-
-            String jsonResponse = restTemplate.exchange(urlWeatherApi, HttpMethod.GET, entity, String.class).getBody();
-
-          //  var getTemperatureOutResponse = returnTemperatureForCurrentHour(jsonResponse);
-
-            ObjectMapper mapper = new ObjectMapper();
-            List<TemperatureDto> temps = mapper.readValue(
-                    jsonResponse,
-                    mapper.getTypeFactory().constructCollectionType(List.class, TemperatureDto.class)
-            );
-
-            System.out.println(temps);
-
-         //   return conversionService.convert(getTemperatureOutResponse, Temperature.class);
-            return null;
+            return conversionService.convert(getTemperatureOutResponse, Temperature.class);
 
         } catch (RestClientException restClientException) {
-            log.error("Received error from guard API: {}", restClientException.getMessage());
+            log.error("Received error from weather API: {}", restClientException.getMessage());
             throw new RuntimeException(restClientException);
-
-        } catch (JsonProcessingException e) {
-            log.error("Received error when parsing Json response: {}", e.getMessage());
-            throw new RuntimeException(e);
+        } catch (IOException ioException) {
+            log.error("Received error when parsed weather API response: {}", ioException.getMessage());
+            throw new RuntimeException(ioException);
         }
     }
 
-    private GetTemperatureOutResponse returnTemperatureForCurrentHour(String jsonResponse) throws JsonProcessingException {
+    private List<GetTemperatureOutResponse> getResponseFromWeatherApi(Double latitude, Double longitude) throws JsonProcessingException {
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("User-Agent", weatherApiConfig.getUserAgent());
+        HttpEntity<String> entity = new HttpEntity<>(null, headers);
 
-        ObjectMapper objectMapper = new ObjectMapper();
-        JsonNode filteredJsonNodes = objectMapper.readTree(jsonResponse).at("/properties/timeseries");
+//        URI uri = UriComponentsBuilder.fromUriString(weatherApiConfig.getWeatherUrl())
+//                .queryParam("lat", 1.4)
+//                .queryParam("lon", 1.4)
+//                .build()
+//                .toUri();
+        var urlWeatherApi = weatherApiConfig.getWeatherUrl() + "?lat="+ latitude + "&lon=" + longitude;
 
-        var getTemperatureOutResponse = new GetTemperatureOutResponse();
+        var fullResponse = restTemplate.exchange(urlWeatherApi, HttpMethod.GET, entity, String.class).getBody();
 
-        for (JsonNode node : filteredJsonNodes) {
-            String time = node.get("time").asText();
+        JsonNode filteredResponse = objectMapper.readTree(fullResponse).at("/properties/timeseries");
 
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
-            LocalDateTime timeInResponse = LocalDateTime.parse(time, formatter);
-
-            if(timeInResponse.equals(getCurrentTimeInRoundHours())) {
-
-                double airTemperature = node.at("/data/instant/details/air_temperature").asDouble();
-
-                getTemperatureOutResponse = getTemperatureOutResponse.toBuilder()
-                        .airTemperature(airTemperature)
-                        .time(timeInResponse)
-                        .build();
-
-                log.debug("Found air temperature in json response {}:", getTemperatureOutResponse);
-            }
-        }
-        return getTemperatureOutResponse;
+        return objectMapper.readValue(
+                filteredResponse.toString(),
+                objectMapper.getTypeFactory().constructCollectionType(List.class, GetTemperatureOutResponse.class));
     }
 
     private LocalDateTime getCurrentTimeInRoundHours() {

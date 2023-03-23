@@ -14,6 +14,6 @@ public class GetLocationService implements GetLocationUseCase {
     @Override
     public Location getLocationById(Integer id) {
         return getLocationPort.getLocationById(id)
-               .orElseThrow(()-> new IllegalArgumentException("Location not found with id" + id));
+               .orElseThrow(()-> new IllegalArgumentException("Location not found with id: " + id));
     }
 }

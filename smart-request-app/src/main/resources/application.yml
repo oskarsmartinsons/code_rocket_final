@@ -1,9 +1,14 @@
+server:
+  port: 8080
+
 logging:
   level:
     com.meawallet.smartrequest: DEBUG
 
 weather-api:
+  #weather-url: https://api.met.no/weatherapi/locationforecast/2.0/compact?lat={latitude}&lon={longitude}
   weather-url: https://api.met.no/weatherapi/locationforecast/2.0/compact
+  user-agent: SmartRequest1.0
 
 spring:
   jpa:

@@ -7,4 +7,6 @@ import lombok.Data;
 public class WeatherApiConfig {
     @NotBlank
     private String weatherUrl;
+    @NotBlank
+    private String userAgent;
 }
