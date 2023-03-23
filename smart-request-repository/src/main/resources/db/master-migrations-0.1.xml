@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="create.locations.table" author="oskars.martinsons">
+        <createTable tableName="locations">
+            <column name="id" type="INTEGER" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="lat" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LON" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create.temperatures.table" author="oskars.martinsons">
+        <createTable tableName="temperatures">
+            <column name="id" type="INTEGER" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="temperature" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="temperature_at" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expiration_date" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add.relations.to.locations.and.temperatures" author="oskars.martinsons">
+        <addColumn tableName="locations">
+            <column name="temp_id" type="INTEGER"/>
+        </addColumn>
+        <addForeignKeyConstraint baseTableName="locations" baseColumnNames="temp_id"
+                                 constraintName="fk_location_to_temperature_id"
+                                 referencedTableName="temperatures"  referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>
