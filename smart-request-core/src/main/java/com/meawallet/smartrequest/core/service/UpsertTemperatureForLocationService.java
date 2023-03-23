@@ -18,18 +18,16 @@ public class UpsertTemperatureForLocationService implements UpsertTemperatureFor
     private final SaveTemperaturePort saveTemperaturePort;
     private final SaveLocationPort saveLocationPort;
     private final FindLocationByLatitudeAndLongitudePort findLocationByLatitudeAndLongitudePort;
-    private final GetTemperatureExternalService getTemperatureExternalService;
-
     private final GetTemperatureFromExtApiPort getTemperatureFromExtApiPort;
 
     @Override
     public Temperature upsertTemperatureForLocation(Double latitude, Double longitude) {
-     //   var temperature = getTemperatureExternalService.getExtTemperature();
+
         var temperature = getTemperatureFromExtApiPort.getTemperatureFromExtApi(latitude, longitude);
         log.debug("Temperature from 3rd party service: {}", temperature);
 
         var savedTemperature = saveTemperaturePort.saveTemperature(temperature);
-        log.debug("Saved Temperature: {}", savedTemperature);
+        log.debug("Saved Temperature in database: {}", savedTemperature);
 
         var locationWithTemperature = Location.builder()
                 .latitude(latitude)
@@ -38,8 +36,6 @@ public class UpsertTemperatureForLocationService implements UpsertTemperatureFor
                 .build();
 
         upsertLocation(locationWithTemperature);
-
-        //  upsertLocation(latitude, longitude, savedTemperature);
 
         return savedTemperature;
 
@@ -57,19 +53,4 @@ public class UpsertTemperatureForLocationService implements UpsertTemperatureFor
         }
     }
 
-/*    private void upsertLocation(Double latitude, Double longitude, Temperature savedTemperature) {
-        var location = findByLatitudeAndLongitudePort.findLocationByLatitudeAndLongitude(latitude, longitude)
-                .orElseGet(Location::new);
-        log.debug("This is findLocationByLatLon result: {}", location);
-
-        var locationWithTemperature = Location.builder()
-                .id(location.getId())
-                .latitude(latitude)
-                .longitude(longitude)
-                .temperature(savedTemperature)
-                .build();
-        log.debug("This is locationWithTemperature result: {}", locationWithTemperature);
-
-        saveLocationPort.saveLocation(locationWithTemperature);
-    }*/
 }

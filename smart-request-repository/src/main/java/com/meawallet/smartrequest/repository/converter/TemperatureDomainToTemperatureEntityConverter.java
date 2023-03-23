@@ -13,6 +13,7 @@ public class TemperatureDomainToTemperatureEntityConverter implements Converter<
                 .id(temperature.getId())
                 .temperature(temperature.getTemperature())
                 .unit(temperature.getUnit())
+                .lastTimeUpdated(temperature.getLastTimeUpdated())
                 .timeStamp(temperature.getTimeStamp())
                 .build();
     }

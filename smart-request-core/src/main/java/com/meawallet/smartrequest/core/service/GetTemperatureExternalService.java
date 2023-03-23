@@ -1,4 +1,4 @@
-package com.meawallet.smartrequest.core.service;
+/*package com.meawallet.smartrequest.core.service;
 
 import com.meawallet.smartrequest.domain.Temperature;
 import lombok.AllArgsConstructor;
@@ -12,9 +12,9 @@ import java.time.LocalDate;
 public class GetTemperatureExternalService {
     public Temperature getExtTemperature() {
         return Temperature.builder()
-                .temperature(BigDecimal.valueOf(13.13))
+                .temperature(13.13)
                 .unit("C")
                 .timeStamp(LocalDate.now())
                 .build();
     }
-}
+}*/

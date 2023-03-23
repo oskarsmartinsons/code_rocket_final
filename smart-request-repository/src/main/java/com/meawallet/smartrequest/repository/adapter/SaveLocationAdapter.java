@@ -22,19 +22,12 @@ public class SaveLocationAdapter implements SaveLocationPort {
     private final LocationEntityToLocationDomainConverter locationEntityToLocationDomainConverter;
     @Override
     public Location saveLocation(Location location) {
-        log.debug("saveLocation in Adapter received: {}", location);
 
         var entity = locationDomainToLocationEntityConverter.convert(location);
-
-        log.debug("Converted Location to Entity: {}", entity);
-
         locationRepository.saveAndFlush(entity);
 
-        log.debug("Location entity Saved: {}", entity);
+        log.debug("Location saved in database: {}", entity);
 
         return locationEntityToLocationDomainConverter.convert(entity);
-
     }
-
-
 }

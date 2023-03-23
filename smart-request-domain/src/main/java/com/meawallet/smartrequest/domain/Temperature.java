@@ -5,12 +5,14 @@ import lombok.Value;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Value
 @Builder
 public class Temperature {
     Integer id;
-    BigDecimal temperature;
+    Double temperature;
     String unit;
+    LocalDateTime lastTimeUpdated;
     LocalDate timeStamp;
 }

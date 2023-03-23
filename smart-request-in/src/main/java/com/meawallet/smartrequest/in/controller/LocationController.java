@@ -3,23 +3,12 @@ package com.meawallet.smartrequest.in.controller;
 import com.meawallet.smartrequest.core.port.in.GetLocationTemperatureUseCase;
 import com.meawallet.smartrequest.core.port.in.GetLocationUseCase;
 import com.meawallet.smartrequest.core.port.in.SaveLocationUseCase;
-import com.meawallet.smartrequest.core.port.in.SaveTemperatureUseCase;
-import com.meawallet.smartrequest.core.service.GetTemperatureExternalService;
-import com.meawallet.smartrequest.core.service.UpsertTemperatureForLocationService;
 import com.meawallet.smartrequest.domain.Location;
 import com.meawallet.smartrequest.domain.Temperature;
-import com.meawallet.smartrequest.repository.adapter.GetLocationByIdAdapter;
-import com.meawallet.smartrequest.repository.entity.LocationEntity;
-import com.meawallet.smartrequest.repository.repository.LocationRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import javax.swing.text.html.parser.Entity;
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.Optional;
 
 @Slf4j
 @RestController
@@ -27,11 +16,7 @@ import java.util.Optional;
 public class LocationController {
     private final GetLocationUseCase getLocationUseCase;
     private final SaveLocationUseCase saveLocationUseCase;
-    private final SaveTemperatureUseCase saveTemperatureUseCase;
-    private final UpsertTemperatureForLocationService upsertTemperatureForLocationService;
-
     private final GetLocationTemperatureUseCase getLocationTemperatureUseCase;
-    private final GetTemperatureExternalService getTemperatureExternalService;
 
     @PostMapping(value = "/locations")
     public void saveLocation(@RequestBody Location location) {

@@ -10,8 +10,9 @@ import java.math.BigDecimal;
 public class GetTemperatureOutResponseToTemperatureConverter {
     public Temperature convert (GetTemperatureOutResponse response) {
         return Temperature.builder()
-                .temperature(BigDecimal.valueOf(response.getAirTemperature()))
+                .temperature(response.getAirTemperature())
               //  .unit(response.unit())
+                .lastTimeUpdated(response.getTime())
                 .timeStamp(response.getTime().toLocalDate())
                 .build();
     }

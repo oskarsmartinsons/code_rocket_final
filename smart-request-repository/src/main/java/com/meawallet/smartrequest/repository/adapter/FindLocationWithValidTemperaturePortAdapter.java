@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Slf4j
@@ -19,9 +20,9 @@ public class FindLocationWithValidTemperaturePortAdapter implements FindLocation
     private final LocationEntityToLocationDomainConverter locationEntityToLocationDomainConverter;
 
     @Override
-    public Optional<Location> findLocationWithValidTemperature(Double latitude, Double longitude, LocalDate date) {
+    public Optional<Location> findLocationWithValidTemperature(Double latitude, Double longitude) {
 
-        return locationRepository.findLocationWithValidTemperature(latitude, longitude, date)
+        return locationRepository.findLocationWithValidTemperature(latitude, longitude)
                 .map(locationEntityToLocationDomainConverter::convert);
     }
 }

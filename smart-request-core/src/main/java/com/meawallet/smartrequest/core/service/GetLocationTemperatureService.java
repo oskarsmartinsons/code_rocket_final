@@ -8,8 +8,6 @@ import com.meawallet.smartrequest.domain.Temperature;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import java.time.LocalDate;
-
 
 @Slf4j
 @Component
@@ -17,17 +15,11 @@ import java.time.LocalDate;
 public class GetLocationTemperatureService implements GetLocationTemperatureUseCase {
     private final FindLocationWithValidTemperaturePort findLocationWithValidTemperaturePort;
     private final UpsertTemperatureForLocationUseCase upsertTemperatureForLocationUseCase;
-    private final GetTemperatureFromExtApiPort getTemperatureFromExtApiPort;
 
     @Override
     public Temperature getTemperatureByCoordinates(Double latitude, Double longitude) {
 
-        var date = LocalDate.now();
-        log.debug("Date: {}", date);
-
-        getTemperatureFromExtApiPort.getTemperatureFromExtApi(latitude, longitude);
-
-        var location = findLocationWithValidTemperaturePort.findLocationWithValidTemperature(latitude, longitude, date);
+        var location = findLocationWithValidTemperaturePort.findLocationWithValidTemperature(latitude, longitude);
         log.debug("Found Location with valid temperature: {}", location);
 
         return location.isEmpty() ?

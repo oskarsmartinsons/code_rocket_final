@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Optional;
 @Repository
 public interface LocationRepository extends JpaRepository<LocationEntity, Integer> {
@@ -21,13 +22,15 @@ public interface LocationRepository extends JpaRepository<LocationEntity, Intege
             "FROM LocationEntity l " +
             "WHERE l.latitude = :latitude " +
             "AND l.longitude = :longitude " +
-          //  "AND l.temperature.currentHour >= CURRENT_TIMESTAMP")
-            "AND l.temperature.timeStamp >= :date")
+          //  "AND l.temperature.lastTimeUpdated = :lastUpdate")
+          //  "AND l.temperature.timeStamp >= :date")
+            "AND l.temperature.lastTimeUpdated = DATE_TRUNC('hour', CURRENT_TIMESTAMP)")
 
             Optional<LocationEntity> findLocationWithValidTemperature(
             @Param("latitude") Double latitude,
-            @Param("longitude") Double longitude,
-            @Param("date") LocalDate date);
+            @Param("longitude") Double longitude);
+        //    @Param("lastUpdate") LocalDateTime lastUpdate);
+         //   @Param("date") LocalDate date);
 
 
 }

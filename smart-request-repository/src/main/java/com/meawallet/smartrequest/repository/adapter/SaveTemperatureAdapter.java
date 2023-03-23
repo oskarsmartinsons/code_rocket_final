@@ -18,15 +18,11 @@ public class SaveTemperatureAdapter implements SaveTemperaturePort {
     private final TemperatureEntityToTemperatureDomainConverter temperatureEntityToTemperatureDomainConverter;
     @Override
     public Temperature saveTemperature(Temperature temperature) {
-        log.debug("saveTemp in Adapter received: {}", temperature);
 
         var entity = temperatureDomainToTemperatureEntityConverter.convert(temperature);
-
-        log.debug("Converted Temp to Entity: {}", entity);
-
         temperatureRepository.saveAndFlush(entity);
 
-        log.debug("Temp entity Saved: {}", entity);
+        log.debug("Temperature saved in database: {}", entity);
 
         return temperatureEntityToTemperatureDomainConverter.convert(entity);
     }

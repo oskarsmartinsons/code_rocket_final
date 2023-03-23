@@ -22,11 +22,11 @@ public class TemperatureEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "temperature")
-    private BigDecimal temperature;
+    private Double temperature;
     @Column(name = "unit")
     private String unit;
-    @Column(name = "current_hour")
-    private LocalDateTime currentHour;
+    @Column(name = "last_time_updated")
+    private LocalDateTime lastTimeUpdated;
     @Column(name = "time_stamp")
     private LocalDate timeStamp;
 }

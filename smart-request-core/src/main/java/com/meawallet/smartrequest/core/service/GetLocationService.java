@@ -11,18 +11,11 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 public class GetLocationService implements GetLocationUseCase {
     private final GetLocationPort getLocationPort;
-    private final SaveLocationPort saveLocationPort;
 
     @Override
     public Location getLocationById(Integer id) {
         return getLocationPort.getLocationById(id)
                .orElseThrow(()-> new IllegalArgumentException("Location not found with id" + id));
 
-    }
-
-    @Override
-    public Location getLocation(Integer id) {
-        return getLocationPort.getLocationById(id)
-                .orElse(null);
     }
 }
