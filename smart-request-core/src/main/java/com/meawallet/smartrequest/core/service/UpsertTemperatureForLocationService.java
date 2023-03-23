@@ -1,7 +1,7 @@
 package com.meawallet.smartrequest.core.service;
 
 import com.meawallet.smartrequest.core.port.in.UpsertTemperatureForLocationUseCase;
-import com.meawallet.smartrequest.core.port.out.FindByLatitudeAndLongitudePort;
+import com.meawallet.smartrequest.core.port.out.FindLocationByLatitudeAndLongitudePort;
 import com.meawallet.smartrequest.core.port.out.GetTemperatureFromExtApiPort;
 import com.meawallet.smartrequest.core.port.out.SaveLocationPort;
 import com.meawallet.smartrequest.core.port.out.SaveTemperaturePort;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 public class UpsertTemperatureForLocationService implements UpsertTemperatureForLocationUseCase {
     private final SaveTemperaturePort saveTemperaturePort;
     private final SaveLocationPort saveLocationPort;
-    private final FindByLatitudeAndLongitudePort findByLatitudeAndLongitudePort;
+    private final FindLocationByLatitudeAndLongitudePort findLocationByLatitudeAndLongitudePort;
     private final GetTemperatureExternalService getTemperatureExternalService;
 
     private final GetTemperatureFromExtApiPort getTemperatureFromExtApiPort;
@@ -46,7 +46,7 @@ public class UpsertTemperatureForLocationService implements UpsertTemperatureFor
     }
 
     private void upsertLocation(Location location) {
-        var existingLocation = findByLatitudeAndLongitudePort
+        var existingLocation = findLocationByLatitudeAndLongitudePort
                 .findLocationByLatitudeAndLongitude(location.getLatitude(), location.getLongitude());
 
         if (existingLocation.isEmpty()) {

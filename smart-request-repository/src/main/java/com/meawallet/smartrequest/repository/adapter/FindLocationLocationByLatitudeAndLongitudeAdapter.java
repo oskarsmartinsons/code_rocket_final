@@ -1,6 +1,6 @@
 package com.meawallet.smartrequest.repository.adapter;
 
-import com.meawallet.smartrequest.core.port.out.FindByLatitudeAndLongitudePort;
+import com.meawallet.smartrequest.core.port.out.FindLocationByLatitudeAndLongitudePort;
 import com.meawallet.smartrequest.domain.Location;
 import com.meawallet.smartrequest.repository.converter.LocationEntityToLocationDomainConverter;
 import com.meawallet.smartrequest.repository.repository.LocationRepository;
@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Component
 @AllArgsConstructor
-public class FindLocationByLatitudeAndLongitudeAdapter implements FindByLatitudeAndLongitudePort {
+public class FindLocationLocationByLatitudeAndLongitudeAdapter implements FindLocationByLatitudeAndLongitudePort {
     private final LocationRepository locationRepository;
     private final LocationEntityToLocationDomainConverter locationEntityToLocationDomainConverter;
     @Override

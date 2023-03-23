@@ -40,17 +40,13 @@ public class GetTemperatureFromExtApiAdapter implements GetTemperatureFromExtApi
         try {
             HttpHeaders headers = new HttpHeaders();
             headers.set("User-Agent", "SmartRequest1.0"); // Set a unique identifier as the User-Agent header
-
             HttpEntity<String> entity = new HttpEntity<>(null, headers);
-            String jsonResponse = restTemplate
-                    .exchange("https://api.met.no/weatherapi/locationforecast/2.0/compact?lat="
-                            + latitude + "&lon=" + longitude, HttpMethod.GET, entity, String.class)
-                    .getBody();
 
-            ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode filteredJsonNodes = objectMapper.readTree(jsonResponse).at("/properties/timeseries");
+            String urlWeatherApi = "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=" + latitude + "&lon=" + longitude;
 
-            var getTemperatureOutResponse = returnTemperatureForCurrentHour(filteredJsonNodes);
+            String jsonResponse = restTemplate.exchange(urlWeatherApi, HttpMethod.GET, entity, String.class).getBody();
+
+            var getTemperatureOutResponse = returnTemperatureForCurrentHour(jsonResponse);
 
             return getTemperatureOutResponseToTemperatureConverter.convert(getTemperatureOutResponse);
 
@@ -64,11 +60,14 @@ public class GetTemperatureFromExtApiAdapter implements GetTemperatureFromExtApi
         }
     }
 
-    private GetTemperatureOutResponse returnTemperatureForCurrentHour(JsonNode jsonNodes) {
+    private GetTemperatureOutResponse returnTemperatureForCurrentHour(String jsonResponse) throws JsonProcessingException {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode filteredJsonNodes = objectMapper.readTree(jsonResponse).at("/properties/timeseries");
 
         var getTemperatureOutResponse = new GetTemperatureOutResponse();
 
-        for (JsonNode node : jsonNodes) {
+        for (JsonNode node : filteredJsonNodes) {
             String time = node.get("time").asText();
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
