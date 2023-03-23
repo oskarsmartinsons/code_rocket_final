@@ -4,31 +4,28 @@ import com.meawallet.smartrequest.domain.Location;
 import com.meawallet.smartrequest.repository.entity.LocationEntity;
 import com.meawallet.smartrequest.repository.entity.TemperatureEntity;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.convert.ConversionService;
-import org.springframework.stereotype.Component;
 import org.springframework.core.convert.converter.Converter;
-
+import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 
 @Component
 @AllArgsConstructor
-public class LocationDomainToLocationEntityConverter implements Converter<Location, LocationEntity> {
+@Slf4j
+public class LocationDomainToLocationEntityConverter{
     private final ConversionService conversionService;
-    private final TemperatureDomainToTemperatureEntityConverter temperatureDomainToTemperatureEntityConverter;
 
-    @Override
     public LocationEntity convert(Location location) {
-
-        var temp = Optional.ofNullable(location.getTemperature())
-                .map(temperatureDomainToTemperatureEntityConverter::convert)
-                .orElse(null);
+        var ent = conversionService.convert(location.getTemperature(), TemperatureEntity.class);
 
         return LocationEntity.builder()
                 .id(location.getId())
                 .latitude(location.getLatitude())
                 .longitude(location.getLongitude())
-                .temperature(temp)
+                .temperature(ent)
                 .build();
     }
 }

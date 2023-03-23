@@ -3,9 +3,7 @@ logging:
     com.meawallet.smartrequest: DEBUG
 
 weather-api:
-  weather-url: https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${latitude}&lon=${longitude}
-  latitude: 4
-  longitude: 3
+  weather-url: https://api.met.no/weatherapi/locationforecast/2.0/compact
 
 spring:
   jpa:

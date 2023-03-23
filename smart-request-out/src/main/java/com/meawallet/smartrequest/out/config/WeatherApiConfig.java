@@ -7,8 +7,4 @@ import lombok.Data;
 public class WeatherApiConfig {
     @NotBlank
     private String weatherUrl;
-    @NotBlank
-    private Double latitude;
-    @NotBlank
-    private Double longitude;
 }

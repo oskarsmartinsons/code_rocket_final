@@ -10,9 +10,11 @@ import com.meawallet.smartrequest.domain.Temperature;
 import com.meawallet.smartrequest.out.config.WeatherApiConfig;
 import com.meawallet.smartrequest.out.converter.GetTemperatureOutResponseToTemperatureConverter;
 import com.meawallet.smartrequest.out.dto.GetTemperatureOutResponse;
+import com.meawallet.smartrequest.out.dto.TemperatureDto;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.jni.Library;
+import org.springframework.core.convert.ConversionService;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -33,22 +35,30 @@ import java.util.List;
 public class GetTemperatureFromExtApiAdapter implements GetTemperatureFromExtApiPort {
     private final RestTemplate restTemplate;
     private final WeatherApiConfig weatherApiConfig;
-    private final GetTemperatureOutResponseToTemperatureConverter getTemperatureOutResponseToTemperatureConverter;
-
+    private final ConversionService conversionService;
     @Override
     public Temperature getTemperatureFromExtApi(Double latitude, Double longitude) {
         try {
             HttpHeaders headers = new HttpHeaders();
-            headers.set("User-Agent", "SmartRequest1.0"); // Set a unique identifier as the User-Agent header
+            headers.set("User-Agent", "SmartRequest1.0");
             HttpEntity<String> entity = new HttpEntity<>(null, headers);
 
-            String urlWeatherApi = "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=" + latitude + "&lon=" + longitude;
+            String urlWeatherApi = weatherApiConfig.getWeatherUrl() + "?lat=" + latitude + "&lon=" + longitude;
 
             String jsonResponse = restTemplate.exchange(urlWeatherApi, HttpMethod.GET, entity, String.class).getBody();
 
-            var getTemperatureOutResponse = returnTemperatureForCurrentHour(jsonResponse);
+          //  var getTemperatureOutResponse = returnTemperatureForCurrentHour(jsonResponse);
 
-            return getTemperatureOutResponseToTemperatureConverter.convert(getTemperatureOutResponse);
+            ObjectMapper mapper = new ObjectMapper();
+            List<TemperatureDto> temps = mapper.readValue(
+                    jsonResponse,
+                    mapper.getTypeFactory().constructCollectionType(List.class, TemperatureDto.class)
+            );
+
+            System.out.println(temps);
+
+         //   return conversionService.convert(getTemperatureOutResponse, Temperature.class);
+            return null;
 
         } catch (RestClientException restClientException) {
             log.error("Received error from guard API: {}", restClientException.getMessage());
