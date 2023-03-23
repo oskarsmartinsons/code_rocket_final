@@ -2,7 +2,6 @@ package com.meawallet.smartrequest.core.service;
 
 import com.meawallet.smartrequest.core.port.in.GetLocationUseCase;
 import com.meawallet.smartrequest.core.port.out.GetLocationPort;
-import com.meawallet.smartrequest.core.port.out.SaveLocationPort;
 import com.meawallet.smartrequest.domain.Location;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -16,6 +15,5 @@ public class GetLocationService implements GetLocationUseCase {
     public Location getLocationById(Integer id) {
         return getLocationPort.getLocationById(id)
                .orElseThrow(()-> new IllegalArgumentException("Location not found with id" + id));
-
     }
 }

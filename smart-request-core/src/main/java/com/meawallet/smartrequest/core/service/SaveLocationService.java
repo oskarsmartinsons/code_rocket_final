@@ -1,3 +1,4 @@
+/*
 package com.meawallet.smartrequest.core.service;
 
 import com.meawallet.smartrequest.core.port.in.SaveLocationUseCase;
@@ -16,3 +17,4 @@ public class SaveLocationService implements SaveLocationUseCase {
         return saveLocationPort.saveLocation(location);
     }
 }
+*/

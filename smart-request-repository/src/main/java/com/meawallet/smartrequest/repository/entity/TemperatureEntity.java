@@ -6,9 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -23,10 +22,19 @@ public class TemperatureEntity {
     private Integer id;
     @Column(name = "temperature")
     private Double temperature;
-    @Column(name = "unit")
-    private String unit;
-    @Column(name = "last_time_updated")
-    private LocalDateTime lastTimeUpdated;
-    @Column(name = "time_stamp")
-    private LocalDate timeStamp;
+    @Column(name = "temperature_at")
+    private LocalDateTime temperatureAt;
+    @Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "expiration_date")
+    private LocalDateTime expirationDate;
+
+    @PrePersist
+    public void prePersist() {
+        expirationDate = LocalDateTime.now().plusHours(1);
+        createdAt = LocalDateTime.now();
+    }
 }

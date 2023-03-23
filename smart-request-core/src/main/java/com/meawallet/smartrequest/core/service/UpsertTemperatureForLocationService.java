@@ -24,10 +24,9 @@ public class UpsertTemperatureForLocationService implements UpsertTemperatureFor
     public Temperature upsertTemperatureForLocation(Double latitude, Double longitude) {
 
         var temperature = getTemperatureFromExtApiPort.getTemperatureFromExtApi(latitude, longitude);
-        log.debug("Temperature from 3rd party service: {}", temperature);
+        log.debug("Retrieved Temperature from 3rd party service: {}", temperature);
 
         var savedTemperature = saveTemperaturePort.saveTemperature(temperature);
-        log.debug("Saved Temperature in database: {}", savedTemperature);
 
         var locationWithTemperature = Location.builder()
                 .latitude(latitude)
@@ -44,13 +43,12 @@ public class UpsertTemperatureForLocationService implements UpsertTemperatureFor
     private void upsertLocation(Location location) {
         var existingLocation = findLocationByLatitudeAndLongitudePort
                 .findLocationByLatitudeAndLongitude(location.getLatitude(), location.getLongitude());
+        log.debug("Found existing Location: {}", existingLocation);
 
         if (existingLocation.isEmpty()) {
             saveLocationPort.saveLocation(location);
         } else {
             saveLocationPort.saveLocation(existingLocation.get());
-
         }
     }
-
 }

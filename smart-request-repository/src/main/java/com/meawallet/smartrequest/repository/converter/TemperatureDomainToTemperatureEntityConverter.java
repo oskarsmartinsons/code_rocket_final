@@ -12,9 +12,9 @@ public class TemperatureDomainToTemperatureEntityConverter implements Converter<
         return TemperatureEntity.builder()
                 .id(temperature.getId())
                 .temperature(temperature.getTemperature())
-                .unit(temperature.getUnit())
-                .lastTimeUpdated(temperature.getLastTimeUpdated())
-                .timeStamp(temperature.getTimeStamp())
+                .temperatureAt(temperature.getTemperatureAt())
+                .createdAt(temperature.getCreatedAt())
+                .expirationDate(temperature.getExpirationDate())
                 .build();
     }
 }

@@ -2,7 +2,7 @@ package com.meawallet.smartrequest.in.controller;
 
 import com.meawallet.smartrequest.core.port.in.GetLocationTemperatureUseCase;
 import com.meawallet.smartrequest.core.port.in.GetLocationUseCase;
-import com.meawallet.smartrequest.core.port.in.SaveLocationUseCase;
+//import com.meawallet.smartrequest.core.port.in.SaveLocationUseCase;
 import com.meawallet.smartrequest.domain.Location;
 import com.meawallet.smartrequest.domain.Temperature;
 import lombok.AllArgsConstructor;
@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class LocationController {
     private final GetLocationUseCase getLocationUseCase;
-    private final SaveLocationUseCase saveLocationUseCase;
+   // private final SaveLocationUseCase saveLocationUseCase;
     private final GetLocationTemperatureUseCase getLocationTemperatureUseCase;
 
-    @PostMapping(value = "/locations")
+/*    @PostMapping(value = "/locations")
     public void saveLocation(@RequestBody Location location) {
         log.debug("Received save request for LOCATION: {}", location);
         saveLocationUseCase.saveLocation(location);
-    }
+    }*/
 
     @GetMapping(value = "/locations/{id}")
     public Location getLocationById(@PathVariable Integer id) {
@@ -36,14 +36,10 @@ public class LocationController {
         return getLocationTemperatureUseCase.getTemperatureByCoordinates(latitude, longitude);
     }
 
-    @GetMapping(value = "/test")
-    public String test() {log.debug("Test request received");
-        return "Test";
-    }
-
     @ExceptionHandler
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+  //  @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public String handle(Exception e) {
-        return e.getMessage();
+
+        return e.getMessage() + e.getCause();
     }
 }

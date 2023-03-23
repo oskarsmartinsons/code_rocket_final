@@ -6,7 +6,6 @@ import com.meawallet.smartrequest.repository.converter.LocationEntityToLocationD
 import com.meawallet.smartrequest.repository.repository.LocationRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
-
 import java.util.Optional;
 
 @Component

@@ -7,9 +7,6 @@ import com.meawallet.smartrequest.repository.repository.LocationRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Slf4j
@@ -21,7 +18,6 @@ public class FindLocationWithValidTemperaturePortAdapter implements FindLocation
 
     @Override
     public Optional<Location> findLocationWithValidTemperature(Double latitude, Double longitude) {
-
         return locationRepository.findLocationWithValidTemperature(latitude, longitude)
                 .map(locationEntityToLocationDomainConverter::convert);
     }

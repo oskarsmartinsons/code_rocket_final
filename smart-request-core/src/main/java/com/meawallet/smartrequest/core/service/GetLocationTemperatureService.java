@@ -3,7 +3,6 @@ package com.meawallet.smartrequest.core.service;
 import com.meawallet.smartrequest.core.port.in.GetLocationTemperatureUseCase;
 import com.meawallet.smartrequest.core.port.in.UpsertTemperatureForLocationUseCase;
 import com.meawallet.smartrequest.core.port.out.FindLocationWithValidTemperaturePort;
-import com.meawallet.smartrequest.core.port.out.GetTemperatureFromExtApiPort;
 import com.meawallet.smartrequest.domain.Temperature;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,13 +17,11 @@ public class GetLocationTemperatureService implements GetLocationTemperatureUseC
 
     @Override
     public Temperature getTemperatureByCoordinates(Double latitude, Double longitude) {
+        var locationWithValidTemperature = findLocationWithValidTemperaturePort.findLocationWithValidTemperature(latitude, longitude);
+        log.debug("Found Location with valid temperature: {}", locationWithValidTemperature);
 
-        var location = findLocationWithValidTemperaturePort.findLocationWithValidTemperature(latitude, longitude);
-        log.debug("Found Location with valid temperature: {}", location);
-
-        return location.isEmpty() ?
-                upsertTemperatureForLocationUseCase.upsertTemperatureForLocation(latitude, longitude)
-                :
-                location.get().getTemperature();
+        return locationWithValidTemperature.isEmpty()
+                ? upsertTemperatureForLocationUseCase.upsertTemperatureForLocation(latitude, longitude)
+                : locationWithValidTemperature.get().getTemperature();
     }
 }

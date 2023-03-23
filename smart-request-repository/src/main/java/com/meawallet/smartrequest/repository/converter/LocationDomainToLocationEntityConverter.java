@@ -20,10 +20,6 @@ public class LocationDomainToLocationEntityConverter implements Converter<Locati
     @Override
     public LocationEntity convert(Location location) {
 
-       //  var temperatureEntity = conversionService.convert(location.getTemperature(), TemperatureEntity.class);
-       // var temperatureEnt = location.getTemperature() != null ? temperatureDomainToTemperatureEntityConverter.convert()
-        //var temperatureEntity = temperatureDomainToTemperatureEntityConverter.convert(location.getTemperature());
-
         var temp = Optional.ofNullable(location.getTemperature())
                 .map(temperatureDomainToTemperatureEntityConverter::convert)
                 .orElse(null);
