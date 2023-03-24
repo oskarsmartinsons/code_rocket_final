@@ -4,20 +4,22 @@ import com.meawallet.smartrequest.core.port.in.GetLocationTemperatureUseCase;
 import com.meawallet.smartrequest.core.port.in.GetLocationUseCase;
 //import com.meawallet.smartrequest.core.port.in.SaveLocationUseCase;
 import com.meawallet.smartrequest.domain.Location;
-import com.meawallet.smartrequest.domain.Temperature;
+import com.meawallet.smartrequest.in.dto.GetTemperatureInResponse;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.crossstore.ChangeSetPersister;
-import org.springframework.http.HttpStatus;
+import org.springframework.core.convert.ConversionService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
 @AllArgsConstructor
-public class LocationController {
+public class TemperatureController {
     private final GetLocationUseCase getLocationUseCase;
    // private final SaveLocationUseCase saveLocationUseCase;
     private final GetLocationTemperatureUseCase getLocationTemperatureUseCase;
+
+    private final ConversionService conversionService;
 
 /*    @PostMapping(value = "/locations")
     public void saveLocation(@RequestBody Location location) {
@@ -31,10 +33,10 @@ public class LocationController {
         return getLocationUseCase.getLocationById(id);
     }
     @GetMapping(value = "/weather")
-    public Temperature getLocationTemperature(@RequestParam("lat") Double latitude, @RequestParam("lon") Double longitude) {
-        log.debug("Received GET Temp by coordinates: {} , {}", latitude, longitude);
-
-        return getLocationTemperatureUseCase.getTemperatureByCoordinates(latitude, longitude);
+    public ResponseEntity<GetTemperatureInResponse> getTemperatureByCoordinates(@RequestParam("lat") Double latitude, @RequestParam("lon") Double longitude) {
+        log.debug("Received GET request by coordinates: {} , {}", latitude, longitude);
+        var temperature = getLocationTemperatureUseCase.getTemperatureByCoordinates(latitude, longitude);
+        return ResponseEntity.ok(conversionService.convert(temperature, GetTemperatureInResponse.class));
     }
 
 }

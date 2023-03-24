@@ -14,7 +14,6 @@ import java.util.Optional;
 
 @Component
 @AllArgsConstructor
-@Slf4j
 public class LocationDomainToLocationEntityConverter{
     private final ConversionService conversionService;
 

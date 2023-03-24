@@ -20,19 +20,18 @@ import static org.mockito.Mockito.when;
 @MockitoSettings
 class GetLocationTemperatureServiceTest {
     @Mock
-    FindLocationWithValidTemperaturePort findLocationWithValidTemperaturePort;
+    private FindLocationWithValidTemperaturePort findLocationWithValidTemperaturePort;
     @Mock
-    GetTemperatureFromExtApiService getTemperatureFromExtApiService;
+    private GetTemperatureFromExtApiUseCase getTemperatureFromExtApiUseCase;
     @InjectMocks
-    GetLocationTemperatureService getLocationTemperatureService;
+    private GetLocationTemperatureService getLocationTemperatureService;
 
     @Test
-    void shouldReturnTemperatureFromCacheIfFound() {
-        var expectedTemperature = getTemperature();
-        var location = getLocation(expectedTemperature);
+    void shouldReturnTemperatureFromCacheWhenFound() {
+        var expectedTemperature = temperature();
 
         when(findLocationWithValidTemperaturePort.findLocationWithValidTemperature(any(), any()))
-                .thenReturn(Optional.of(location));
+                .thenReturn(Optional.of(location()));
 
         var actualTemperature = getLocationTemperatureService.getTemperatureByCoordinates(any(), any());
 
@@ -40,35 +39,33 @@ class GetLocationTemperatureServiceTest {
     }
 
     @Test
-    void shouldReturnTemperatureFromExternalApiIfNotFound() {
-        var expectedTemperature = getTemperature();
+    void shouldReturnTemperatureFromExternalApiWhenNotFound() {
+        var expectedTemperature = temperature();
 
         when(findLocationWithValidTemperaturePort.findLocationWithValidTemperature(any(), any()))
                 .thenReturn(Optional.empty());
-
-        when(getTemperatureFromExtApiService.getTemperatureFromExtApi(any(), any()))
+        when(getTemperatureFromExtApiUseCase.getTemperatureFromExtApi(any(), any()))
                 .thenReturn(expectedTemperature);
 
         var actualTemperature = getLocationTemperatureService.getTemperatureByCoordinates(any(), any());
+
         assertEquals(expectedTemperature, actualTemperature);
     }
 
-    private Location getLocation(Temperature temperature) {
+    private Location location() {
         return Location.builder()
                 .id(1)
                 .latitude(66.65)
                 .longitude(33.33)
-                .temperature(temperature)
+                .temperature(temperature())
                 .build();
     }
 
-    private Temperature getTemperature() {
+    private Temperature temperature() {
          return Temperature.builder()
                 .id(1)
                 .temperature(2.3)
-                .temperatureAt(LocalDateTime.now())
-                .createdAt(LocalDateTime.now())
-                .expirationDate(LocalDateTime.now().plusHours(1))
+                .temperatureAt(LocalDateTime.parse("2023-03-24T17:24:21"))
                 .build();
     }
 }

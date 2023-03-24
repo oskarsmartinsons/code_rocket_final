@@ -26,26 +26,24 @@ public class GetTemperatureFromExtApiService implements GetTemperatureFromExtApi
         log.debug("Retrieved Temperature from 3rd party service: {}", temperature);
 
         var savedTemperature = saveTemperaturePort.saveTemperature(temperature);
-        var locationWithTemperature = Location.builder()
-                .latitude(latitude)
-                .longitude(longitude)
-                .temperature(savedTemperature)
-                .build();
 
-        upsertLocation(locationWithTemperature);
+        upsertLocationWithTemperature(latitude,longitude,savedTemperature);
 
         return savedTemperature;
     }
 
-    private void upsertLocation(Location location) {
-        var existingLocation = findLocationByLatitudeAndLongitudePort
-                .findLocationByLatitudeAndLongitude(location.getLatitude(), location.getLongitude());
-        log.debug("Found existing Location: {}", existingLocation);
+        private void upsertLocationWithTemperature(Double latitude, Double longitude, Temperature temperature) {
+            var location = findLocationByLatitudeAndLongitudePort
+                    .findLocationByLatitudeAndLongitude(latitude, longitude)
+                    .map(existingLocation -> existingLocation.toBuilder()
+                            .temperature(temperature)
+                            .build())
+                    .orElseGet(() -> Location.builder()
+                            .latitude(latitude)
+                            .longitude(longitude)
+                            .temperature(temperature)
+                            .build());
 
-        if (existingLocation.isEmpty()) {
             saveLocationPort.saveLocation(location);
-        } else {
-            saveLocationPort.saveLocation(existingLocation.get());
         }
-    }
 }
