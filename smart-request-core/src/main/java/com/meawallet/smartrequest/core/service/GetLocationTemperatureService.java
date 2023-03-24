@@ -1,7 +1,7 @@
 package com.meawallet.smartrequest.core.service;
 
 import com.meawallet.smartrequest.core.port.in.GetLocationTemperatureUseCase;
-import com.meawallet.smartrequest.core.port.in.UpsertTemperatureForLocationUseCase;
+import com.meawallet.smartrequest.core.port.in.GetTemperatureFromExtApiUseCase;
 import com.meawallet.smartrequest.core.port.out.FindLocationWithValidTemperaturePort;
 import com.meawallet.smartrequest.domain.Temperature;
 import lombok.AllArgsConstructor;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 public class GetLocationTemperatureService implements GetLocationTemperatureUseCase {
     private final FindLocationWithValidTemperaturePort findLocationWithValidTemperaturePort;
-    private final UpsertTemperatureForLocationUseCase upsertTemperatureForLocationUseCase;
+    private final GetTemperatureFromExtApiUseCase getTemperatureFromExtApiUseCase;
 
     @Override
     public Temperature getTemperatureByCoordinates(Double latitude, Double longitude) {
@@ -21,7 +21,7 @@ public class GetLocationTemperatureService implements GetLocationTemperatureUseC
         log.debug("Found Location with valid temperature: {}", locationWithValidTemperature);
 
         return locationWithValidTemperature.isEmpty()
-                ? upsertTemperatureForLocationUseCase.upsertTemperatureForLocation(latitude, longitude)
+                ? getTemperatureFromExtApiUseCase.getTemperatureFromExtApi(latitude, longitude)
                 : locationWithValidTemperature.get().getTemperature();
     }
 }

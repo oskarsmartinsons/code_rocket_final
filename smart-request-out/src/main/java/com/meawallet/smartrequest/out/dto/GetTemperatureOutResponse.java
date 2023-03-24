@@ -6,7 +6,6 @@ import java.time.LocalDateTime;
 
 @Data
 @Builder
-//@NoArgsConstructor
 @JsonDeserialize(using = GetTemperatureOutResponseDeserializer.class)
 public class GetTemperatureOutResponse {
     LocalDateTime time;
