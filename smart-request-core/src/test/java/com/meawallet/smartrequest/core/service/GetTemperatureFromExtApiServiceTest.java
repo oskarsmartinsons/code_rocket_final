@@ -54,7 +54,7 @@ class GetTemperatureFromExtApiServiceTest {
     }
 
     @Test
-    void shouldInsertLocationWhenNotFound(){
+    void shouldSaveNewLocationWhenNotFound(){
         var latitude = 11.11;
         var longitude = 99.99;
         when(saveTemperaturePort.saveTemperature(any()))

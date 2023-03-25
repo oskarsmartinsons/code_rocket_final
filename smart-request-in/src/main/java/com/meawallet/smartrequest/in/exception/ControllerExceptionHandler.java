@@ -18,4 +18,15 @@ public class ControllerExceptionHandler {
     public String handleIllegalArgumentException(IllegalArgumentException e) {
         return e.getMessage();
     }
+
+//    @ExceptionHandler(MethodArgumentNotValidException.class)
+//    public ResponseEntity<String> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
+//        BindingResult bindingResult = ex.getBindingResult();
+//        String errorMessage = "Validation error(s): ";
+//        for (FieldError fieldError : bindingResult.getFieldErrors()) {
+//            errorMessage += fieldError.getField() + " " + fieldError.getDefaultMessage() + ", ";
+//        }
+//        errorMessage = errorMessage.substring(0, errorMessage.length() - 2);
+//        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
+//    }
 }

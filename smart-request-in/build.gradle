@@ -12,17 +12,20 @@ repositories {
 dependencies {
     implementation project(":smart-request-core")
     implementation project(":smart-request-domain")
-    implementation project(":smart-request-repository") // should be replaced later for core and domain
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.0.4' // should be removed once service is implemented
-
 
     implementation 'org.springframework.boot:spring-boot-starter-web:3.0.3'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:3.0.3'
+    implementation 'org.springframework:spring-core:6.0.5'
+
 
     compileOnly 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
 
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.9.2'
+
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.1.1'
+    testImplementation 'org.mockito:mockito-core:5.1.1'
 }
 
 test {
