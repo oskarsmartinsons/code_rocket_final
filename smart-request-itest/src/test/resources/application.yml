@@ -6,7 +6,7 @@ logging:
     com.meawallet.smartrequest: DEBUG
 
 weather-api:
-  weather-url: http://localhost:20000/random/random?lat=11.11&lon=33.33
+  weather-url: http://localhost:20000/external
   user-agent: SmartRequest1.0
 
 dbunit:

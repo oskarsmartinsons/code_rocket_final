@@ -12,13 +12,13 @@ import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DatabaseTearDown(value = "classpath:dbunit/empty_dataset.xml", type = DELETE_ALL)
-public class GetLocationTemperatureFromExtApiIntegrationTest extends BaseIntegrationTest {
+public class GetNewLocationTemperatureFromExtApiIntegrationTest extends BaseIntegrationTest {
 
-    // Before run - update expected temperature in "temperatureFromExtApiNewLocationSuccess_Expected.xml"
+    // Before run - update expected temperature in "temperatureFromExtApiNewLocationSuccess_ExpectedState.xml"
     //              according to expected one in "externalApiResponseSuccess.json" file
     @Test
-    @ExpectedDatabase(value = "classpath:dbunit/temperatureFromExtApiNewLocationSuccess_Expected.xml", assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED)
-    void shouldReturnTemperatureFromExtApi() throws Exception {
+    @ExpectedDatabase(value = "classpath:dbunit/temperatureFromExtApiNewLocationSuccess_ExpectedState.xml", assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED)
+    void shouldReturnTemperatureFromExtApiForNewLocation() throws Exception {
         var weatherApiResponse = readJson("externalApiResponseSuccess.json");
         stubExternalApiResponse(weatherApiResponse, 200);
 
@@ -29,7 +29,7 @@ public class GetLocationTemperatureFromExtApiIntegrationTest extends BaseIntegra
     }
 
     private static void stubExternalApiResponse(String weatherApiResponse, int status) {
-        wireMockServer.stubFor(get(urlEqualTo("/external")).willReturn(
+        wireMockServer.stubFor(get(urlEqualTo("/external?lat=11.11&lon=33.33")).willReturn(
                 aResponse()
                         .withStatus(status)
                         .withBody(weatherApiResponse)

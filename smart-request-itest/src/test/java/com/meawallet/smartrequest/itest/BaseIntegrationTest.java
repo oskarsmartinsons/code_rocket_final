@@ -1,21 +1,32 @@
 package com.meawallet.smartrequest.itest;
 
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
+import com.github.springtestdbunit.annotation.DatabaseSetup;
+import com.github.springtestdbunit.annotation.ExpectedDatabase;
+import com.github.springtestdbunit.assertion.DatabaseAssertionMode;
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.meawallet.smartrequest.app.SmartRequestApp;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.test.web.servlet.MockMvc;
 import org.apache.commons.io.IOUtils;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
+
+import static com.github.tomakehurst.wiremock.client.WireMock.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
 @TestExecutionListeners(value = {
@@ -32,7 +43,6 @@ public class BaseIntegrationTest {
     @Autowired
     protected MockMvc mvc;
     protected static WireMockServer wireMockServer = new WireMockServer(20000);
-
     @BeforeAll
     static void beforeAll() {
         wireMockServer.start();
@@ -55,25 +65,4 @@ public class BaseIntegrationTest {
         }
     }
 
-
-//    @Test
-//    @ExpectedDatabase(value = "classpath:dbunit/temperatureFromExtApiNewLocationSuccess_Expected.xml", assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED)
-//    void shouldReturnTemperatureFromExtApi() throws Exception {
-//        var weatherApiResponse = readJson("externalApiResponseSuccess.json");
-//        stubExternalApiResponse(weatherApiResponse, 200);
-//
-//        mvc.perform(MockMvcRequestBuilders.get("/weather?lat=11.11&lon=33.33"))
-//                .andExpect(status().isOk())
-//                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-//                .andExpect(jsonPath("$.temperature").value("29.3"));
-//    }
-//
-//    private static void stubExternalApiResponse(String weatherApiResponse, int status) {
-//        wireMockServer.stubFor(get(urlEqualTo("/external")).willReturn(
-//                aResponse()
-//                        .withStatus(status)
-//                        .withBody(weatherApiResponse)
-//                        .withHeader(HttpHeaders.CONTENT_TYPE, "application/json")
-//        ));
-//    }
 }

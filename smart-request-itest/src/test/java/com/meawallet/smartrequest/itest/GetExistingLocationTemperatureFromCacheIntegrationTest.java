@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-public class GetLocationTemperatureFromCacheIntegrationTest extends  BaseIntegrationTest{
+public class GetExistingLocationTemperatureFromCacheIntegrationTest extends  BaseIntegrationTest{
     @Autowired
     private DataSource dataSource;
 

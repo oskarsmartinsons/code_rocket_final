@@ -64,8 +64,8 @@ public class GetTemperatureFromExtApiAdapter implements GetTemperatureFromExtApi
 //                .toUri();
         var urlWeatherApi = weatherApiConfig.getWeatherUrl() + "?lat="+ latitude + "&lon=" + longitude;
 
-        var fullResponse = restTemplate.exchange("http://localhost:20000/external", HttpMethod.GET, entity, String.class).getBody();
-//        var fullResponse = restTemplate.exchange(urlWeatherApi, HttpMethod.GET, entity, String.class).getBody();
+//        var fullResponse = restTemplate.exchange("http://localhost:20000/external", HttpMethod.GET, entity, String.class).getBody();
+        var fullResponse = restTemplate.exchange(urlWeatherApi, HttpMethod.GET, entity, String.class).getBody();
 
         JsonNode filteredResponse = objectMapper.readTree(fullResponse).at("/properties/timeseries");
 
