@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
@@ -25,7 +26,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @TestExecutionListeners(value = {
         TransactionalTestExecutionListener.class,
@@ -66,23 +67,20 @@ public class BaseIntegrationTest {
                 throw new RuntimeException(e);
         }
     }
-
     @Test
-   // @DatabaseSetup(value = "classpath:dbunit/temperature.xml")
-    @DatabaseSetup(value = "classpath:dbunit/locationWithTemperature.xml")
-
-    @ExpectedDatabase(value = "classpath:dbunit/locationWithTemperature.xml", assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED)
-    void shouldFindLocationByLatitudeAndLongitude() throws Exception {
+    @ExpectedDatabase(value = "classpath:dbunit/temperatureFromExtApiNewLocationSuccess_Expected.xml", assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED)
+    void shouldReturnTemperatureFromExtApi() throws Exception {
         var weatherApiResponse = readJson("weatherApiResponseSuccess.json");
-
         stubExternalApiResponse(weatherApiResponse, 200);
 
         mvc.perform(MockMvcRequestBuilders.get("/weather?lat=11.11&lon=33.33"))
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.temperature").value("31.4"));
     }
 
     private static void stubExternalApiResponse(String weatherApiResponse, int status) {
-        wireMockServer.stubFor(get(urlEqualTo("/random")).willReturn(
+        wireMockServer.stubFor(get(urlEqualTo("/external")).willReturn(
                 aResponse()
                         .withStatus(status)
                         .withBody(weatherApiResponse)

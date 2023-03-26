@@ -9,10 +9,10 @@
             <column name="id" type="INTEGER" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="lat" type="DOUBLE">
+            <column name="latitude" type="DOUBLE">
                 <constraints nullable="false"/>
             </column>
-            <column name="lon" type="DOUBLE">
+            <column name="longitude" type="DOUBLE">
                 <constraints nullable="false"/>
             </column>
         </createTable>
@@ -45,6 +45,21 @@
         <addForeignKeyConstraint baseTableName="locations" baseColumnNames="temp_id"
                                  constraintName="fk_location_to_temperature_id"
                                  referencedTableName="temperatures"  referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="add.index.to.locations.for.latitude.longitude" author="oskars.martinsons">
+        <createIndex indexName="latitude_and_longitude" tableName="locations" unique="true">
+            <column name="latitude"/>
+            <column name="longitude"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="add.index.to.locations.for.latitude.longitude.temperature_at" author="oskars.martinsons">
+        <createIndex indexName="latitude_and_longitude_and_temperature_at" tableName="locations" unique="true">
+            <column name="latitude"/>
+            <column name="longitude"/>
+            <column name="temp_id"/>
+        </createIndex>
     </changeSet>
 
 </databaseChangeLog>

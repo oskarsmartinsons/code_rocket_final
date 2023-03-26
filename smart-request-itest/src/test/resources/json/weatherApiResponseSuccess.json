@@ -3,14 +3,14 @@
   "geometry": {
     "type": "Point",
     "coordinates": [
-      11.11,
       33.33,
-      496
+      11.11,
+      449
     ]
   },
   "properties": {
     "meta": {
-      "updated_at": "2023-03-21T20:35:52Z",
+      "updated_at": "2023-03-26T13:36:28Z",
       "units": {
         "air_pressure_at_sea_level": "hPa",
         "air_temperature": "celsius",
@@ -23,813 +23,21 @@
     },
     "timeseries": [
       {
-        "time": "2023-03-21T20:00:00Z",
+        "time": "2023-03-26T16:00:00Z",
         "data": {
           "instant": {
             "details": {
               "air_pressure_at_sea_level": 1005.2,
-              "air_temperature": -0.9,
+              "air_temperature": 35,
               "cloud_area_fraction": 100,
-              "relative_humidity": 99.2,
-              "wind_from_direction": 142,
-              "wind_speed": 2.2
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsnow"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "snow"
-            },
-            "details": {
-              "precipitation_amount": 0.5
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "snow"
-            },
-            "details": {
-              "precipitation_amount": 1.6
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-21T21:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 1004.4,
-              "air_temperature": -0.9,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 99,
-              "wind_from_direction": 128.4,
-              "wind_speed": 1.9
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsnow"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "snow"
-            },
-            "details": {
-              "precipitation_amount": 0.4
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "snow"
-            },
-            "details": {
-              "precipitation_amount": 1.1
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-21T22:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 1003.3,
-              "air_temperature": -0.9,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 99.1,
-              "wind_from_direction": 114.1,
-              "wind_speed": 1.7
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsnow"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "lightsnow"
-            },
-            "details": {
-              "precipitation_amount": 0.2
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "lightsnow"
-            },
-            "details": {
-              "precipitation_amount": 0.7
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-21T23:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 1002.6,
-              "air_temperature": -0.9,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 99.6,
-              "wind_from_direction": 111.8,
-              "wind_speed": 1.4
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsnow"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "lightsnow"
-            },
-            "details": {
-              "precipitation_amount": 0.1
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "lightsnow"
-            },
-            "details": {
-              "precipitation_amount": 0.9
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T00:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 1001.8,
-              "air_temperature": -0.9,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 99.6,
-              "wind_from_direction": 18.3,
-              "wind_speed": 1
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsleet"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "lightsnow"
-            },
-            "details": {
-              "precipitation_amount": 0.1
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "lightsnow"
-            },
-            "details": {
-              "precipitation_amount": 0.7
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T01:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 1000.7,
-              "air_temperature": -1,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 99.7,
-              "wind_from_direction": 100.3,
-              "wind_speed": 1.1
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightrain"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "lightsnow"
-            },
-            "details": {
-              "precipitation_amount": 0.2
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T02:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 999.8,
-              "air_temperature": -1,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 99.6,
-              "wind_from_direction": 43,
-              "wind_speed": 1
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightrain"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "lightsnow"
-            },
-            "details": {
-              "precipitation_amount": 0.1
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T03:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 998.8,
-              "air_temperature": -1.1,
-              "cloud_area_fraction": 99,
-              "relative_humidity": 99.4,
-              "wind_from_direction": 44,
-              "wind_speed": 1
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightrain"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T04:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 998.2,
-              "air_temperature": -1.7,
-              "cloud_area_fraction": 96.2,
-              "relative_humidity": 98.9,
-              "wind_from_direction": 40.2,
-              "wind_speed": 0.9
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightrain"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T05:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 997.5,
-              "air_temperature": -2.2,
-              "cloud_area_fraction": 75.1,
-              "relative_humidity": 98.2,
-              "wind_from_direction": 94.7,
-              "wind_speed": 0.9
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightrain"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_day"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T06:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 997,
-              "air_temperature": -2.5,
-              "cloud_area_fraction": 76.2,
-              "relative_humidity": 97.4,
-              "wind_from_direction": 53.2,
-              "wind_speed": 1.1
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightrain"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_day"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "lightrain"
-            },
-            "details": {
-              "precipitation_amount": 0.9
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T07:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 996.5,
-              "air_temperature": -1.8,
-              "cloud_area_fraction": 96.3,
-              "relative_humidity": 98.4,
-              "wind_from_direction": 139.9,
-              "wind_speed": 0.7
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "rain"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "rain"
-            },
-            "details": {
-              "precipitation_amount": 1.8
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T08:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 995.6,
-              "air_temperature": -0.7,
-              "cloud_area_fraction": 98.9,
-              "relative_humidity": 98.6,
-              "wind_from_direction": 125.2,
-              "wind_speed": 0.8
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightrainshowers_day"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "rain"
-            },
-            "details": {
-              "precipitation_amount": 2.8
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T09:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 994.7,
-              "air_temperature": 1.3,
-              "cloud_area_fraction": 99.7,
-              "relative_humidity": 92.4,
-              "wind_from_direction": 303,
-              "wind_speed": 0.8
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightrainshowers_day"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "rain"
-            },
-            "details": {
-              "precipitation_amount": 3.2
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T10:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 993.8,
-              "air_temperature": 2.8,
-              "cloud_area_fraction": 99.7,
-              "relative_humidity": 86.4,
-              "wind_from_direction": 199.7,
-              "wind_speed": 1.4
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightrainshowers_day"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "lightrain"
-            },
-            "details": {
-              "precipitation_amount": 0.1
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "rain"
-            },
-            "details": {
-              "precipitation_amount": 3.3
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T11:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 992.8,
-              "air_temperature": 2.6,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 96.2,
-              "wind_from_direction": 201.1,
-              "wind_speed": 1.6
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightrainshowers_day"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "rain"
-            },
-            "details": {
-              "precipitation_amount": 0.8
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "rain"
-            },
-            "details": {
-              "precipitation_amount": 3.1
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T12:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 991.9,
-              "air_temperature": 2.2,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 99.3,
-              "wind_from_direction": 115.3,
-              "wind_speed": 1.9
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightrainshowers_day"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "rain"
-            },
-            "details": {
-              "precipitation_amount": 0.8
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "rain"
-            },
-            "details": {
-              "precipitation_amount": 2.5
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T13:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 990.9,
-              "air_temperature": 2.1,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 99.6,
-              "wind_from_direction": 137.1,
-              "wind_speed": 2.7
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightrainshowers_day"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "rain"
-            },
-            "details": {
-              "precipitation_amount": 0.9
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "rainshowers_day"
-            },
-            "details": {
-              "precipitation_amount": 1.6
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T14:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 990,
-              "air_temperature": 1.9,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 99.3,
-              "wind_from_direction": 136.6,
-              "wind_speed": 2.2
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightrainshowers_day"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "rain"
-            },
-            "details": {
-              "precipitation_amount": 0.5
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "lightrainshowers_day"
-            },
-            "details": {
-              "precipitation_amount": 0.6
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T15:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 988.8,
-              "air_temperature": 1.9,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 99.3,
-              "wind_from_direction": 133.4,
-              "wind_speed": 2.6
+              "relative_humidity": 10.9,
+              "wind_from_direction": 335.8,
+              "wind_speed": 3.6
             }
           },
           "next_12_hours": {
             "summary": {
               "symbol_code": "partlycloudy_night"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "lightrain"
-            },
-            "details": {
-              "precipitation_amount": 0.1
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T16:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 988,
-              "air_temperature": 2,
-              "cloud_area_fraction": 99.8,
-              "relative_humidity": 99.4,
-              "wind_from_direction": 142.3,
-              "wind_speed": 2.2
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "fog"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T17:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 987.8,
-              "air_temperature": 2,
-              "cloud_area_fraction": 94.2,
-              "relative_humidity": 99.1,
-              "wind_from_direction": 160.7,
-              "wind_speed": 2
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "fair_night"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T18:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 988,
-              "air_temperature": 1.2,
-              "cloud_area_fraction": 51.4,
-              "relative_humidity": 98.4,
-              "wind_from_direction": 143.8,
-              "wind_speed": 2
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "fair_night"
             }
           },
           "next_1_hours": {
@@ -851,1260 +59,34 @@
         }
       },
       {
-        "time": "2023-03-22T19:00:00Z",
+        "time": "2023-03-26T17:00:00Z",
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 988.5,
-              "air_temperature": 0.2,
-              "cloud_area_fraction": 15.3,
-              "relative_humidity": 97.4,
-              "wind_from_direction": 154.8,
-              "wind_speed": 1.7
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "fair_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T20:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 989,
-              "air_temperature": -0.5,
-              "cloud_area_fraction": 33.8,
-              "relative_humidity": 96.6,
-              "wind_from_direction": 126.3,
-              "wind_speed": 1.7
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "fair_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T21:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 989.5,
-              "air_temperature": -0.7,
-              "cloud_area_fraction": 25.9,
-              "relative_humidity": 94,
-              "wind_from_direction": 130.2,
-              "wind_speed": 1.7
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_day"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "fair_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T22:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 989.7,
-              "air_temperature": -0.6,
-              "cloud_area_fraction": 49.7,
-              "relative_humidity": 91.9,
-              "wind_from_direction": 126.1,
-              "wind_speed": 2.1
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_day"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-22T23:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 990.1,
-              "air_temperature": -0.4,
-              "cloud_area_fraction": 63.5,
-              "relative_humidity": 91.3,
-              "wind_from_direction": 119.9,
-              "wind_speed": 2.4
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_day"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "fair_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T00:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 990.4,
-              "air_temperature": -0.6,
-              "cloud_area_fraction": 47.5,
-              "relative_humidity": 90,
-              "wind_from_direction": 123.1,
-              "wind_speed": 2.2
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_day"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "fair_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T01:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 990.6,
-              "air_temperature": -1.2,
-              "cloud_area_fraction": 20.4,
-              "relative_humidity": 89.2,
-              "wind_from_direction": 127.7,
-              "wind_speed": 2.2
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightrainshowers_day"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "fair_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T02:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 990.9,
-              "air_temperature": -1.6,
-              "cloud_area_fraction": 24.7,
-              "relative_humidity": 87.1,
-              "wind_from_direction": 124.5,
-              "wind_speed": 2.1
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsleetshowers_day"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "fair_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T03:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 991,
-              "air_temperature": -1.5,
-              "cloud_area_fraction": 74.4,
-              "relative_humidity": 85.5,
-              "wind_from_direction": 132.9,
-              "wind_speed": 2.4
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsleetshowers_day"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_day"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T04:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 991,
-              "air_temperature": -1.2,
-              "cloud_area_fraction": 12.3,
-              "relative_humidity": 86.7,
-              "wind_from_direction": 130,
-              "wind_speed": 2.1
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsleet"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "fair_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_day"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T05:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 991.2,
-              "air_temperature": -1.9,
-              "cloud_area_fraction": 0,
-              "relative_humidity": 89.1,
-              "wind_from_direction": 131.8,
-              "wind_speed": 1.9
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsleet"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "clearsky_day"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T06:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 991.6,
-              "air_temperature": -2.4,
-              "cloud_area_fraction": 77,
-              "relative_humidity": 90.9,
-              "wind_from_direction": 119.5,
-              "wind_speed": 1.6
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsleet"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_day"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T07:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 992,
-              "air_temperature": -1.4,
-              "cloud_area_fraction": 99.7,
-              "relative_humidity": 89.8,
-              "wind_from_direction": 71.6,
-              "wind_speed": 1.6
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "sleet"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "rain"
-            },
-            "details": {
-              "precipitation_amount": 2.2
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T08:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 992.1,
-              "air_temperature": 0,
-              "cloud_area_fraction": 99.9,
-              "relative_humidity": 89.5,
-              "wind_from_direction": 22,
-              "wind_speed": 1.1
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsleet"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "sleet"
-            },
-            "details": {
-              "precipitation_amount": 3.6
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T09:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 991.8,
-              "air_temperature": 1.8,
-              "cloud_area_fraction": 99.7,
-              "relative_humidity": 79.2,
-              "wind_from_direction": 192.7,
-              "wind_speed": 0.8
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsleet"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "sleet"
-            },
-            "details": {
-              "precipitation_amount": 4
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T10:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 991.2,
-              "air_temperature": 3,
-              "cloud_area_fraction": 98.9,
-              "relative_humidity": 76.4,
-              "wind_from_direction": 180.2,
-              "wind_speed": 0.9
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsleet"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "sleet"
-            },
-            "details": {
-              "precipitation_amount": 4.1
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T11:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 990.5,
-              "air_temperature": 3.7,
+              "air_pressure_at_sea_level": 1006.2,
+              "air_temperature": 33.6,
               "cloud_area_fraction": 100,
-              "relative_humidity": 76.6,
-              "wind_from_direction": 168.3,
-              "wind_speed": 1.4
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsleet"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "rain"
-            },
-            "details": {
-              "precipitation_amount": 0.5
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "sleet"
-            },
-            "details": {
-              "precipitation_amount": 4.1
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T12:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 990.4,
-              "air_temperature": 2.4,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 95.8,
-              "wind_from_direction": 136.6,
-              "wind_speed": 2.5
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsleet"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "heavyrain"
-            },
-            "details": {
-              "precipitation_amount": 1.6
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "sleet"
-            },
-            "details": {
-              "precipitation_amount": 3.5
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T13:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 990.4,
-              "air_temperature": 1.3,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 99,
-              "wind_from_direction": 139.5,
-              "wind_speed": 2.4
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "heavysleet"
-            },
-            "details": {
-              "precipitation_amount": 1.6
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "sleetshowers_day"
-            },
-            "details": {
-              "precipitation_amount": 1.9
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T14:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 990.3,
-              "air_temperature": 0.6,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 99.9,
-              "wind_from_direction": 123.4,
-              "wind_speed": 1.5
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "sleet"
-            },
-            "details": {
-              "precipitation_amount": 0.2
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "lightsleetshowers_day"
-            },
-            "details": {
-              "precipitation_amount": 0.8
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T15:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 990,
-              "air_temperature": 0.9,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 99.2,
-              "wind_from_direction": 105.7,
-              "wind_speed": 1.4
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "lightsleet"
-            },
-            "details": {
-              "precipitation_amount": 0.1
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "fog"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T16:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 989.9,
-              "air_temperature": 0.9,
-              "cloud_area_fraction": 99.9,
-              "relative_humidity": 99.7,
-              "wind_from_direction": 194.7,
-              "wind_speed": 1.1
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "fog"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T17:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 990,
-              "air_temperature": 0.8,
-              "cloud_area_fraction": 77.5,
-              "relative_humidity": 99.9,
-              "wind_from_direction": 72.3,
-              "wind_speed": 0.7
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "fog"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T18:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 990.5,
-              "air_temperature": -0.6,
-              "cloud_area_fraction": 53.3,
-              "relative_humidity": 99.9,
-              "wind_from_direction": 104.6,
-              "wind_speed": 1.2
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "fog"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T19:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 991,
-              "air_temperature": -1.2,
-              "cloud_area_fraction": 50.2,
-              "relative_humidity": 99.2,
-              "wind_from_direction": 97.4,
-              "wind_speed": 1.2
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "fog"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T20:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 991.3,
-              "air_temperature": -1.2,
-              "cloud_area_fraction": 85.9,
-              "relative_humidity": 96,
-              "wind_from_direction": 89.5,
-              "wind_speed": 1
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T21:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 991.5,
-              "air_temperature": -1.2,
-              "cloud_area_fraction": 82.3,
-              "relative_humidity": 95.3,
-              "wind_from_direction": 107.3,
-              "wind_speed": 1.1
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_night"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T22:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 991.6,
-              "air_temperature": -0.6,
-              "cloud_area_fraction": 99.8,
-              "relative_humidity": 96.6,
-              "wind_from_direction": 91.2,
-              "wind_speed": 1
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-23T23:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 991.8,
-              "air_temperature": -0.4,
-              "cloud_area_fraction": 99.7,
-              "relative_humidity": 97.3,
-              "wind_from_direction": 89.9,
-              "wind_speed": 1
-            }
-          },
-          "next_1_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-24T00:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 991.7,
-              "air_temperature": 0,
-              "cloud_area_fraction": 90.2,
-              "relative_humidity": 97.2,
-              "wind_from_direction": 104.3,
-              "wind_speed": 1.1
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-24T06:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 991.8,
-              "air_temperature": -0.4,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 97.6,
-              "wind_from_direction": 254.7,
-              "wind_speed": 1.1
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-24T12:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 988.3,
-              "air_temperature": 3.7,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 78.7,
-              "wind_from_direction": 158.8,
-              "wind_speed": 1.8
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-24T18:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 987.8,
-              "air_temperature": 2.4,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 88.7,
-              "wind_from_direction": 176.9,
-              "wind_speed": 1.6
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-25T00:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 988,
-              "air_temperature": 0.7,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 96.4,
-              "wind_from_direction": 248,
-              "wind_speed": 1.1
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-25T06:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 987.9,
-              "air_temperature": 0,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 97.8,
-              "wind_from_direction": 240.2,
-              "wind_speed": 0.8
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightrain"
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-25T12:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 988.8,
-              "air_temperature": 3.2,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 78.7,
-              "wind_from_direction": 68.5,
-              "wind_speed": 1.5
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "sleet"
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "rain"
-            },
-            "details": {
-              "precipitation_amount": 1.8
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-25T18:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 990.7,
-              "air_temperature": 1,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 85.9,
-              "wind_from_direction": 13.4,
+              "relative_humidity": 11.2,
+              "wind_from_direction": 338.3,
               "wind_speed": 3.9
             }
           },
           "next_12_hours": {
             "summary": {
-              "symbol_code": "lightsnow"
+              "symbol_code": "partlycloudy_night"
             }
           },
-          "next_6_hours": {
+          "next_1_hours": {
             "summary": {
-              "symbol_code": "sleet"
-            },
-            "details": {
-              "precipitation_amount": 1.9
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-26T00:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 994.2,
-              "air_temperature": -0.1,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 81.8,
-              "wind_from_direction": 14.1,
-              "wind_speed": 5
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "lightsnow"
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "lightsnow"
-            },
-            "details": {
-              "precipitation_amount": 0.5
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-26T06:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 997,
-              "air_temperature": -1.1,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 79,
-              "wind_from_direction": 25,
-              "wind_speed": 4.1
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
+              "symbol_code": "partlycloudy_night"
             },
             "details": {
               "precipitation_amount": 0
             }
-          }
-        }
-      },
-      {
-        "time": "2023-03-26T12:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 1000.1,
-              "air_temperature": -1.2,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 57.2,
-              "wind_from_direction": 24.2,
-              "wind_speed": 3.7
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_day"
-            }
           },
           "next_6_hours": {
             "summary": {
-              "symbol_code": "cloudy"
+              "symbol_code": "partlycloudy_night"
             },
             "details": {
               "precipitation_amount": 0
@@ -2117,12 +99,48 @@
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1001.7,
-              "air_temperature": -2.3,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 71.9,
-              "wind_from_direction": 28.1,
-              "wind_speed": 3.1
+              "air_pressure_at_sea_level": 1007.1,
+              "air_temperature": 32.5,
+              "cloud_area_fraction": 98.4,
+              "relative_humidity": 11.4,
+              "wind_from_direction": 333,
+              "wind_speed": 4.2
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-26T19:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1008.5,
+              "air_temperature": 31.4,
+              "cloud_area_fraction": 96.9,
+              "relative_humidity": 12.2,
+              "wind_from_direction": 331.8,
+              "wind_speed": 4.2
             }
           },
           "next_12_hours": {
@@ -2130,9 +148,161 @@
               "symbol_code": "partlycloudy_day"
             }
           },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
           "next_6_hours": {
             "summary": {
-              "symbol_code": "cloudy"
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-26T20:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1009.8,
+              "air_temperature": 29.3,
+              "cloud_area_fraction": 100,
+              "relative_humidity": 14.6,
+              "wind_from_direction": 112.9,
+              "wind_speed": 3.9
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-26T21:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1010.4,
+              "air_temperature": 27.5,
+              "cloud_area_fraction": 100,
+              "relative_humidity": 29.2,
+              "wind_from_direction": 189.8,
+              "wind_speed": 2.4
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-26T22:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1010.2,
+              "air_temperature": 27.7,
+              "cloud_area_fraction": 99.2,
+              "relative_humidity": 31.8,
+              "wind_from_direction": 260.5,
+              "wind_speed": 2.4
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-26T23:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1009.8,
+              "air_temperature": 26.5,
+              "cloud_area_fraction": 100,
+              "relative_humidity": 24.9,
+              "wind_from_direction": 304.3,
+              "wind_speed": 2.3
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
             },
             "details": {
               "precipitation_amount": 0
@@ -2145,12 +315,12 @@
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1007.1,
-              "air_temperature": -4.7,
-              "cloud_area_fraction": 3.1,
-              "relative_humidity": 79.5,
-              "wind_from_direction": 305.8,
-              "wind_speed": 3.6
+              "air_pressure_at_sea_level": 1009.5,
+              "air_temperature": 26.1,
+              "cloud_area_fraction": 100,
+              "relative_humidity": 20.5,
+              "wind_from_direction": 327.2,
+              "wind_speed": 2.4
             }
           },
           "next_12_hours": {
@@ -2158,9 +328,197 @@
               "symbol_code": "partlycloudy_day"
             }
           },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
           "next_6_hours": {
             "summary": {
-              "symbol_code": "clearsky_night"
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T01:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1009.8,
+              "air_temperature": 25.3,
+              "cloud_area_fraction": 100,
+              "relative_humidity": 21.5,
+              "wind_from_direction": 317.7,
+              "wind_speed": 2.3
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T02:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1010.4,
+              "air_temperature": 24.7,
+              "cloud_area_fraction": 100,
+              "relative_humidity": 22.2,
+              "wind_from_direction": 303,
+              "wind_speed": 2.1
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T03:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1011,
+              "air_temperature": 24.5,
+              "cloud_area_fraction": 100,
+              "relative_humidity": 22.4,
+              "wind_from_direction": 317.1,
+              "wind_speed": 2.4
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T04:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1011.4,
+              "air_temperature": 24.1,
+              "cloud_area_fraction": 100,
+              "relative_humidity": 22.9,
+              "wind_from_direction": 326.3,
+              "wind_speed": 2.5
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T05:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1012.2,
+              "air_temperature": 26.8,
+              "cloud_area_fraction": 100,
+              "relative_humidity": 19.3,
+              "wind_from_direction": 338.9,
+              "wind_speed": 3
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
             },
             "details": {
               "precipitation_amount": 0
@@ -2173,22 +531,210 @@
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1006.8,
-              "air_temperature": -4.3,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 76.1,
-              "wind_from_direction": 323.4,
-              "wind_speed": 3.9
+              "air_pressure_at_sea_level": 1012.8,
+              "air_temperature": 29.7,
+              "cloud_area_fraction": 97.7,
+              "relative_humidity": 15.9,
+              "wind_from_direction": 22.4,
+              "wind_speed": 3
             }
           },
           "next_12_hours": {
             "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
               "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
             }
           },
           "next_6_hours": {
             "summary": {
-              "symbol_code": "cloudy"
+              "symbol_code": "fair_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T07:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1012.7,
+              "air_temperature": 31.9,
+              "cloud_area_fraction": 64.8,
+              "relative_humidity": 13.2,
+              "wind_from_direction": 61.4,
+              "wind_speed": 2.9
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T08:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1012,
+              "air_temperature": 33.5,
+              "cloud_area_fraction": 63.3,
+              "relative_humidity": 13.2,
+              "wind_from_direction": 80.5,
+              "wind_speed": 2.3
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T09:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1010.9,
+              "air_temperature": 35,
+              "cloud_area_fraction": 26.6,
+              "relative_humidity": 12.1,
+              "wind_from_direction": 67.7,
+              "wind_speed": 1.9
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T10:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1009.5,
+              "air_temperature": 36.3,
+              "cloud_area_fraction": 1.6,
+              "relative_humidity": 10.8,
+              "wind_from_direction": 37.2,
+              "wind_speed": 1.8
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T11:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1007.9,
+              "air_temperature": 37.4,
+              "cloud_area_fraction": 4.7,
+              "relative_humidity": 9.5,
+              "wind_from_direction": 11.9,
+              "wind_speed": 2.2
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
             },
             "details": {
               "precipitation_amount": 0
@@ -2201,12 +747,12 @@
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1013.1,
-              "air_temperature": -0.8,
-              "cloud_area_fraction": 37.1,
-              "relative_humidity": 36.3,
-              "wind_from_direction": 224.8,
-              "wind_speed": 3.4
+              "air_pressure_at_sea_level": 1006.3,
+              "air_temperature": 38.1,
+              "cloud_area_fraction": 3.1,
+              "relative_humidity": 8.7,
+              "wind_from_direction": 357.1,
+              "wind_speed": 2.9
             }
           },
           "next_12_hours": {
@@ -2214,9 +760,197 @@
               "symbol_code": "clearsky_day"
             }
           },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
           "next_6_hours": {
             "summary": {
-              "symbol_code": "fair_day"
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T13:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1005.3,
+              "air_temperature": 38.2,
+              "cloud_area_fraction": 2.3,
+              "relative_humidity": 8.6,
+              "wind_from_direction": 354.4,
+              "wind_speed": 3.7
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T14:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1005,
+              "air_temperature": 37.6,
+              "cloud_area_fraction": 2.3,
+              "relative_humidity": 8.8,
+              "wind_from_direction": 355.5,
+              "wind_speed": 4.1
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T15:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1005.1,
+              "air_temperature": 36.8,
+              "cloud_area_fraction": 2.3,
+              "relative_humidity": 9.1,
+              "wind_from_direction": 352,
+              "wind_speed": 4.4
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T16:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1005.9,
+              "air_temperature": 34.6,
+              "cloud_area_fraction": 1.6,
+              "relative_humidity": 10.3,
+              "wind_from_direction": 339.2,
+              "wind_speed": 3.7
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T17:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1006.7,
+              "air_temperature": 33,
+              "cloud_area_fraction": 1.6,
+              "relative_humidity": 11.4,
+              "wind_from_direction": 340.9,
+              "wind_speed": 4
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
             },
             "details": {
               "precipitation_amount": 0
@@ -2229,22 +963,210 @@
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1015.9,
-              "air_temperature": -3.5,
-              "cloud_area_fraction": 0,
-              "relative_humidity": 58.2,
-              "wind_from_direction": 305.3,
-              "wind_speed": 3.1
+              "air_pressure_at_sea_level": 1007.6,
+              "air_temperature": 31.9,
+              "cloud_area_fraction": 1.6,
+              "relative_humidity": 12.3,
+              "wind_from_direction": 348.8,
+              "wind_speed": 4
             }
           },
           "next_12_hours": {
             "summary": {
+              "symbol_code": "fair_night"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
               "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
             }
           },
           "next_6_hours": {
             "summary": {
               "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T19:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1008.6,
+              "air_temperature": 30.9,
+              "cloud_area_fraction": 1.6,
+              "relative_humidity": 13.1,
+              "wind_from_direction": 341.8,
+              "wind_speed": 4.6
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T20:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1009.1,
+              "air_temperature": 30.4,
+              "cloud_area_fraction": 0.8,
+              "relative_humidity": 14.1,
+              "wind_from_direction": 349.5,
+              "wind_speed": 4.9
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T21:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1009.1,
+              "air_temperature": 29.5,
+              "cloud_area_fraction": 0.8,
+              "relative_humidity": 15.2,
+              "wind_from_direction": 351.7,
+              "wind_speed": 5.2
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T22:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1008.9,
+              "air_temperature": 28.7,
+              "cloud_area_fraction": 0.8,
+              "relative_humidity": 16.1,
+              "wind_from_direction": 352.8,
+              "wind_speed": 5.3
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-27T23:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1008.6,
+              "air_temperature": 27.9,
+              "cloud_area_fraction": 2.3,
+              "relative_humidity": 17.3,
+              "wind_from_direction": 350.6,
+              "wind_speed": 5.4
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "fair_night"
             },
             "details": {
               "precipitation_amount": 0
@@ -2257,22 +1179,210 @@
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1018.8,
-              "air_temperature": -5.9,
-              "cloud_area_fraction": 0,
-              "relative_humidity": 80.6,
-              "wind_from_direction": 292.5,
+              "air_pressure_at_sea_level": 1008.3,
+              "air_temperature": 27.2,
+              "cloud_area_fraction": 1.6,
+              "relative_humidity": 17.9,
+              "wind_from_direction": 353.7,
+              "wind_speed": 5.3
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "fair_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T01:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1008.4,
+              "air_temperature": 26.5,
+              "cloud_area_fraction": 1.6,
+              "relative_humidity": 18.1,
+              "wind_from_direction": 4.3,
+              "wind_speed": 4.8
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T02:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1008.7,
+              "air_temperature": 26,
+              "cloud_area_fraction": 1.6,
+              "relative_humidity": 18.2,
+              "wind_from_direction": 9.7,
               "wind_speed": 4.4
             }
           },
           "next_12_hours": {
             "summary": {
-              "symbol_code": "clearsky_day"
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
             }
           },
           "next_6_hours": {
             "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T03:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1009.4,
+              "air_temperature": 25.4,
+              "cloud_area_fraction": 1.6,
+              "relative_humidity": 18.5,
+              "wind_from_direction": 11.7,
+              "wind_speed": 3.9
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
               "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T04:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1010.2,
+              "air_temperature": 24.9,
+              "cloud_area_fraction": 42.2,
+              "relative_humidity": 18.7,
+              "wind_from_direction": 15,
+              "wind_speed": 3.7
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T05:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1011.1,
+              "air_temperature": 26.7,
+              "cloud_area_fraction": 48.4,
+              "relative_humidity": 16.3,
+              "wind_from_direction": 19.7,
+              "wind_speed": 3.6
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
             },
             "details": {
               "precipitation_amount": 0
@@ -2285,17 +1395,205 @@
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1019.6,
-              "air_temperature": -6.6,
-              "cloud_area_fraction": 0.8,
-              "relative_humidity": 83.6,
-              "wind_from_direction": 290,
-              "wind_speed": 3.5
+              "air_pressure_at_sea_level": 1011.4,
+              "air_temperature": 29.5,
+              "cloud_area_fraction": 78.9,
+              "relative_humidity": 13.9,
+              "wind_from_direction": 25.7,
+              "wind_speed": 4.7
             }
           },
           "next_12_hours": {
             "summary": {
               "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T07:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1011.4,
+              "air_temperature": 32.3,
+              "cloud_area_fraction": 96.1,
+              "relative_humidity": 11.8,
+              "wind_from_direction": 29.2,
+              "wind_speed": 5.1
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T08:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1010.6,
+              "air_temperature": 34.8,
+              "cloud_area_fraction": 92.2,
+              "relative_humidity": 10.3,
+              "wind_from_direction": 31.8,
+              "wind_speed": 4.9
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T09:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1009.6,
+              "air_temperature": 36.8,
+              "cloud_area_fraction": 26.6,
+              "relative_humidity": 9.4,
+              "wind_from_direction": 26.3,
+              "wind_speed": 4.1
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T10:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1008,
+              "air_temperature": 38.2,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 8.8,
+              "wind_from_direction": 12.4,
+              "wind_speed": 3.8
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T11:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1006.4,
+              "air_temperature": 39.2,
+              "cloud_area_fraction": 12.5,
+              "relative_humidity": 8.2,
+              "wind_from_direction": 1.1,
+              "wind_speed": 3.9
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
             }
           },
           "next_6_hours": {
@@ -2313,12 +1611,12 @@
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1018.5,
-              "air_temperature": 0.3,
-              "cloud_area_fraction": 27.7,
-              "relative_humidity": 39.4,
-              "wind_from_direction": 126,
-              "wind_speed": 2.7
+              "air_pressure_at_sea_level": 1004.9,
+              "air_temperature": 39.6,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 7.8,
+              "wind_from_direction": 353.3,
+              "wind_speed": 4
             }
           },
           "next_12_hours": {
@@ -2326,9 +1624,17 @@
               "symbol_code": "fair_day"
             }
           },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
           "next_6_hours": {
             "summary": {
-              "symbol_code": "fair_day"
+              "symbol_code": "clearsky_day"
             },
             "details": {
               "precipitation_amount": 0
@@ -2337,21 +1643,29 @@
         }
       },
       {
-        "time": "2023-03-28T18:00:00Z",
+        "time": "2023-03-28T13:00:00Z",
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1018.4,
-              "air_temperature": -3.5,
-              "cloud_area_fraction": 3.1,
-              "relative_humidity": 56.9,
-              "wind_from_direction": 282.1,
-              "wind_speed": 2.6
+              "air_pressure_at_sea_level": 1003.9,
+              "air_temperature": 39.6,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 7.6,
+              "wind_from_direction": 345.6,
+              "wind_speed": 4.4
             }
           },
           "next_12_hours": {
             "summary": {
-              "symbol_code": "partlycloudy_day"
+              "symbol_code": "fair_night"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
             }
           },
           "next_6_hours": {
@@ -2365,16 +1679,351 @@
         }
       },
       {
+        "time": "2023-03-28T14:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1003.5,
+              "air_temperature": 38.9,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 7.9,
+              "wind_from_direction": 342.9,
+              "wind_speed": 4.7
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T15:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1003.7,
+              "air_temperature": 37.8,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 8.2,
+              "wind_from_direction": 341.5,
+              "wind_speed": 4.8
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T16:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1004.7,
+              "air_temperature": 35.5,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 9.2,
+              "wind_from_direction": 335.2,
+              "wind_speed": 3.7
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "fair_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T17:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1006,
+              "air_temperature": 33.7,
+              "cloud_area_fraction": 23.4,
+              "relative_humidity": 10.1,
+              "wind_from_direction": 330.9,
+              "wind_speed": 3.7
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "fair_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "fair_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T18:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1007.1,
+              "air_temperature": 32.8,
+              "cloud_area_fraction": 7.8,
+              "relative_humidity": 10.7,
+              "wind_from_direction": 335.4,
+              "wind_speed": 4.4
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T19:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1008.1,
+              "air_temperature": 32,
+              "cloud_area_fraction": 2.3,
+              "relative_humidity": 11.2,
+              "wind_from_direction": 342.2,
+              "wind_speed": 4.9
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T20:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1008.8,
+              "air_temperature": 31.2,
+              "cloud_area_fraction": 7,
+              "relative_humidity": 11.4,
+              "wind_from_direction": 342.1,
+              "wind_speed": 5.3
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T21:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1008.7,
+              "air_temperature": 30.6,
+              "cloud_area_fraction": 12.5,
+              "relative_humidity": 11.2,
+              "wind_from_direction": 343.2,
+              "wind_speed": 5.3
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T22:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1008.2,
+              "air_temperature": 29.8,
+              "cloud_area_fraction": 42.2,
+              "relative_humidity": 10.6,
+              "wind_from_direction": 343.8,
+              "wind_speed": 5.4
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-28T23:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1007.8,
+              "air_temperature": 29,
+              "cloud_area_fraction": 93,
+              "relative_humidity": 10.4,
+              "wind_from_direction": 343.4,
+              "wind_speed": 5.2
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
         "time": "2023-03-29T00:00:00Z",
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1018.7,
-              "air_temperature": -3.7,
+              "air_pressure_at_sea_level": 1007.8,
+              "air_temperature": 27.9,
               "cloud_area_fraction": 100,
-              "relative_humidity": 76.5,
-              "wind_from_direction": 212.6,
-              "wind_speed": 1.4
+              "relative_humidity": 11,
+              "wind_from_direction": 344,
+              "wind_speed": 4.5
             }
           },
           "next_12_hours": {
@@ -2382,9 +2031,132 @@
               "symbol_code": "partlycloudy_day"
             }
           },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          },
           "next_6_hours": {
             "summary": {
-              "symbol_code": "cloudy"
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-29T01:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1008.2,
+              "air_temperature": 26.9,
+              "cloud_area_fraction": 98.4,
+              "relative_humidity": 12.2,
+              "wind_from_direction": 348.5,
+              "wind_speed": 4.2
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-29T02:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1008.7,
+              "air_temperature": 26,
+              "cloud_area_fraction": 96.1,
+              "relative_humidity": 13.8,
+              "wind_from_direction": 359,
+              "wind_speed": 3.4
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-29T03:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1009.6,
+              "air_temperature": 24.3,
+              "cloud_area_fraction": 96.9,
+              "relative_humidity": 16.2,
+              "wind_from_direction": 42.2,
+              "wind_speed": 2.4
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-29T04:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1010.6,
+              "air_temperature": 23.4,
+              "cloud_area_fraction": 84.4,
+              "relative_humidity": 17,
+              "wind_from_direction": 122.1,
+              "wind_speed": 2.2
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-29T05:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1011.2,
+              "air_temperature": 26.8,
+              "cloud_area_fraction": 57,
+              "relative_humidity": 13.9,
+              "wind_from_direction": 79.7,
+              "wind_speed": 1.4
+            }
+          },
+          "next_1_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
             },
             "details": {
               "precipitation_amount": 0
@@ -2397,12 +2169,12 @@
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1020,
-              "air_temperature": -7.9,
-              "cloud_area_fraction": 11.3,
-              "relative_humidity": 84.5,
-              "wind_from_direction": 297.1,
-              "wind_speed": 2.1
+              "air_pressure_at_sea_level": 1011.6,
+              "air_temperature": 30,
+              "cloud_area_fraction": 18.7,
+              "relative_humidity": 13.6,
+              "wind_from_direction": 66,
+              "wind_speed": 1.8
             }
           },
           "next_12_hours": {
@@ -2425,40 +2197,12 @@
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1014.8,
-              "air_temperature": -0.7,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 63.2,
-              "wind_from_direction": 174.5,
-              "wind_speed": 2.3
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "partlycloudy_day"
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-29T18:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 1012.6,
-              "air_temperature": -2.5,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 78.8,
-              "wind_from_direction": 147.3,
-              "wind_speed": 2.3
+              "air_pressure_at_sea_level": 1005.1,
+              "air_temperature": 39.5,
+              "cloud_area_fraction": 99.2,
+              "relative_humidity": 7.8,
+              "wind_from_direction": 319.5,
+              "wind_speed": 1.9
             }
           },
           "next_12_hours": {
@@ -2477,16 +2221,604 @@
         }
       },
       {
+        "time": "2023-03-29T18:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1007.5,
+              "air_temperature": 32.7,
+              "cloud_area_fraction": 1.6,
+              "relative_humidity": 9.4,
+              "wind_from_direction": 327.2,
+              "wind_speed": 2.9
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
         "time": "2023-03-30T00:00:00Z",
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1018.4,
-              "air_temperature": -6.1,
+              "air_pressure_at_sea_level": 1007.2,
+              "air_temperature": 28.2,
+              "cloud_area_fraction": 21.1,
+              "relative_humidity": 9.2,
+              "wind_from_direction": 353.8,
+              "wind_speed": 4.4
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "fair_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-30T06:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1010.8,
+              "air_temperature": 30.4,
               "cloud_area_fraction": 0.8,
-              "relative_humidity": 79.7,
-              "wind_from_direction": 297.4,
-              "wind_speed": 1.8
+              "relative_humidity": 7.4,
+              "wind_from_direction": 25.9,
+              "wind_speed": 3.4
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-30T12:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1004.4,
+              "air_temperature": 40.5,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 3.8,
+              "wind_from_direction": 326.5,
+              "wind_speed": 2.8
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-30T18:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1006.2,
+              "air_temperature": 32.2,
+              "cloud_area_fraction": 15.6,
+              "relative_humidity": 5.8,
+              "wind_from_direction": 321.7,
+              "wind_speed": 2.7
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "fair_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-31T00:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1006.9,
+              "air_temperature": 28.5,
+              "cloud_area_fraction": 17.2,
+              "relative_humidity": 6.8,
+              "wind_from_direction": 341.8,
+              "wind_speed": 4.7
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "fair_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-31T06:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1011.5,
+              "air_temperature": 30.5,
+              "cloud_area_fraction": 1.6,
+              "relative_humidity": 8.4,
+              "wind_from_direction": 180.4,
+              "wind_speed": 0.2
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-31T12:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1005.4,
+              "air_temperature": 39.2,
+              "cloud_area_fraction": 52.3,
+              "relative_humidity": 5.6,
+              "wind_from_direction": 322.3,
+              "wind_speed": 2
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-03-31T18:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1006.7,
+              "air_temperature": 32.2,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 7.8,
+              "wind_from_direction": 310.7,
+              "wind_speed": 2.6
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-04-01T00:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1007.9,
+              "air_temperature": 28.2,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 12.7,
+              "wind_from_direction": 350.5,
+              "wind_speed": 4.4
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-04-01T06:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1012.5,
+              "air_temperature": 30,
+              "cloud_area_fraction": 35.2,
+              "relative_humidity": 11.6,
+              "wind_from_direction": 28.8,
+              "wind_speed": 2.4
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-04-01T12:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1006,
+              "air_temperature": 39.4,
+              "cloud_area_fraction": 100,
+              "relative_humidity": 7.3,
+              "wind_from_direction": 334.8,
+              "wind_speed": 2.8
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "cloudy"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-04-01T18:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1007.1,
+              "air_temperature": 32.3,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 5.6,
+              "wind_from_direction": 333.2,
+              "wind_speed": 3.6
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-04-02T00:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1007.8,
+              "air_temperature": 27.4,
+              "cloud_area_fraction": 46.1,
+              "relative_humidity": 10.2,
+              "wind_from_direction": 357.3,
+              "wind_speed": 4.7
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-04-02T06:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1010.9,
+              "air_temperature": 29.7,
+              "cloud_area_fraction": 89.1,
+              "relative_humidity": 13.1,
+              "wind_from_direction": 37,
+              "wind_speed": 3
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "cloudy"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-04-02T12:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1004.8,
+              "air_temperature": 39.6,
+              "cloud_area_fraction": 10.2,
+              "relative_humidity": 4.4,
+              "wind_from_direction": 354.4,
+              "wind_speed": 3.5
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-04-02T18:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1005.7,
+              "air_temperature": 31.6,
+              "cloud_area_fraction": 36.7,
+              "relative_humidity": 6.2,
+              "wind_from_direction": 355.6,
+              "wind_speed": 2.7
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "fair_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-04-03T00:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1005.9,
+              "air_temperature": 26.8,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 8.2,
+              "wind_from_direction": 0.1,
+              "wind_speed": 4.6
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-04-03T06:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1008.9,
+              "air_temperature": 30.2,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 9.5,
+              "wind_from_direction": 32.4,
+              "wind_speed": 3.9
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-04-03T12:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1002.7,
+              "air_temperature": 40.8,
+              "cloud_area_fraction": 75.8,
+              "relative_humidity": 3.5,
+              "wind_from_direction": 2.9,
+              "wind_speed": 4.6
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "fair_day"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "partlycloudy_day"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-04-03T18:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1003.4,
+              "air_temperature": 32.5,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 5.5,
+              "wind_from_direction": 10.1,
+              "wind_speed": 3.2
+            }
+          },
+          "next_12_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            }
+          },
+          "next_6_hours": {
+            "summary": {
+              "symbol_code": "clearsky_night"
+            },
+            "details": {
+              "precipitation_amount": 0
+            }
+          }
+        }
+      },
+      {
+        "time": "2023-04-04T00:00:00Z",
+        "data": {
+          "instant": {
+            "details": {
+              "air_pressure_at_sea_level": 1004.2,
+              "air_temperature": 28.4,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 8.9,
+              "wind_from_direction": 8.5,
+              "wind_speed": 4.7
             }
           },
           "next_12_hours": {
@@ -2505,21 +2837,21 @@
         }
       },
       {
-        "time": "2023-03-30T06:00:00Z",
+        "time": "2023-04-04T06:00:00Z",
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1017.9,
-              "air_temperature": -7.6,
-              "cloud_area_fraction": 6.2,
-              "relative_humidity": 84.5,
-              "wind_from_direction": 299.5,
-              "wind_speed": 1.6
+              "air_pressure_at_sea_level": 1008.1,
+              "air_temperature": 31.4,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 6.8,
+              "wind_from_direction": 61,
+              "wind_speed": 3.4
             }
           },
           "next_12_hours": {
             "summary": {
-              "symbol_code": "partlycloudy_day"
+              "symbol_code": "fair_day"
             }
           },
           "next_6_hours": {
@@ -2533,16 +2865,16 @@
         }
       },
       {
-        "time": "2023-03-30T12:00:00Z",
+        "time": "2023-04-04T12:00:00Z",
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1018.7,
-              "air_temperature": 0,
-              "cloud_area_fraction": 31.6,
-              "relative_humidity": 44.6,
-              "wind_from_direction": 127.6,
-              "wind_speed": 2
+              "air_pressure_at_sea_level": 1002.2,
+              "air_temperature": 41.4,
+              "cloud_area_fraction": 32,
+              "relative_humidity": 3.4,
+              "wind_from_direction": 5.9,
+              "wind_speed": 3.8
             }
           },
           "next_12_hours": {
@@ -2561,26 +2893,21 @@
         }
       },
       {
-        "time": "2023-03-30T18:00:00Z",
+        "time": "2023-04-04T18:00:00Z",
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1005.5,
-              "air_temperature": -2,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 82.4,
-              "wind_from_direction": 153.6,
-              "wind_speed": 2.1
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
+              "air_pressure_at_sea_level": 1003.7,
+              "air_temperature": 31.7,
+              "cloud_area_fraction": 82.8,
+              "relative_humidity": 6.1,
+              "wind_from_direction": 18.1,
+              "wind_speed": 2.4
             }
           },
           "next_6_hours": {
             "summary": {
-              "symbol_code": "cloudy"
+              "symbol_code": "partlycloudy_night"
             },
             "details": {
               "precipitation_amount": 0
@@ -2589,95 +2916,16 @@
         }
       },
       {
-        "time": "2023-03-31T00:00:00Z",
+        "time": "2023-04-05T00:00:00Z",
         "data": {
           "instant": {
             "details": {
-              "air_pressure_at_sea_level": 1007.5,
-              "air_temperature": -2.3,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 90.3,
-              "wind_from_direction": 191.9,
-              "wind_speed": 1.5
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-31T06:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 1007.3,
-              "air_temperature": -4.1,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 89.7,
-              "wind_from_direction": 214.2,
-              "wind_speed": 1.5
-            }
-          },
-          "next_12_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-31T12:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 1007.3,
-              "air_temperature": 0.3,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 67.5,
-              "wind_from_direction": 120.6,
-              "wind_speed": 2.1
-            }
-          },
-          "next_6_hours": {
-            "summary": {
-              "symbol_code": "cloudy"
-            },
-            "details": {
-              "precipitation_amount": 0
-            }
-          }
-        }
-      },
-      {
-        "time": "2023-03-31T18:00:00Z",
-        "data": {
-          "instant": {
-            "details": {
-              "air_pressure_at_sea_level": 1007.9,
-              "air_temperature": -1.3,
-              "cloud_area_fraction": 100,
-              "relative_humidity": 80.5,
-              "wind_from_direction": 91.5,
-              "wind_speed": 2.1
+              "air_pressure_at_sea_level": 1004.4,
+              "air_temperature": 28.7,
+              "cloud_area_fraction": 0,
+              "relative_humidity": 8.7,
+              "wind_from_direction": 31.1,
+              "wind_speed": 4.1
             }
           }
         }

@@ -16,9 +16,9 @@ public class LocationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "lat")
+    @Column(name = "latitude")
     private Double latitude;
-    @Column(name = "lon")
+    @Column(name = "longitude")
     private Double longitude;
     @OneToOne
     @JoinColumn(name = "temp_id", referencedColumnName = "id")

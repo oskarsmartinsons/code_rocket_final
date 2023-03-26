@@ -1,0 +1,13 @@
+<dataset>
+    <PUBLIC.temperatures
+            id="1"
+            temperature="31.4"
+            temperature_at="2023-03-26 19:00:00"
+    />
+    <PUBLIC.locations
+            id="1"
+            latitude="11.11"
+            longitude="33.33"
+            temp_id="1"
+    />
+</dataset>
