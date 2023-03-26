@@ -27,8 +27,8 @@ public class GetLocationTemperatureFromCacheIntegrationTest extends  BaseIntegra
     }
 
     @Test
-    @DatabaseSetup(value = "classpath:dbunit/locationWithValidTemperatureSuccess.xml")
-    void shouldReturnTemperatureFromExtApi() throws Exception {
+    @DatabaseSetup(value = "classpath:dbunit/temperatureFromCacheSuccess.xml")
+    void shouldReturnTemperatureFromCache() throws Exception {
 
         mvc.perform(MockMvcRequestBuilders.get("/weather?lat=11.11&lon=33.33"))
                 .andExpect(status().isOk())

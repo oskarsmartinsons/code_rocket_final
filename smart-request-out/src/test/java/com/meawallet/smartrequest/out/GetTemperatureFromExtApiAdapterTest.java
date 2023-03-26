@@ -19,6 +19,7 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
+import java.time.Clock;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,11 +38,13 @@ public class GetTemperatureFromExtApiAdapterTest {
     private ConversionService conversionServiceMock;
     @Mock
     private ObjectMapper objectMapperMock;
+    @Mock
+    private Clock clock;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        getTemperatureFromExtApiAdapter = new GetTemperatureFromExtApiAdapter(restTemplateMock, weatherApiConfigMock, conversionServiceMock, objectMapperMock);
+        getTemperatureFromExtApiAdapter = new GetTemperatureFromExtApiAdapter(restTemplateMock, weatherApiConfigMock, conversionServiceMock, objectMapperMock, clock);
     }
 
     @Test

@@ -29,12 +29,14 @@ public class GetTemperatureFromExtApiAdapter implements GetTemperatureFromExtApi
     private final WeatherApiConfig weatherApiConfig;
     private final ConversionService conversionService;
     private final ObjectMapper objectMapper;
+    private final Clock clock;
+
     @Override
     public Temperature getTemperatureFromExtApi(Double latitude, Double longitude) {
         try {
             var listOfGetTemperatureOutResponse = getResponseFromWeatherApi(latitude, longitude);
             var getTemperatureOutResponse =  listOfGetTemperatureOutResponse.stream()
-                    .filter(response->response.getTime().equals(getCurrentTimeInRoundHours()))
+                    .filter(response->response.getTime().equals(getCurrentTimeInRoundHours(clock)))
                     .findFirst()
                     .orElseThrow(()-> new RestClientException("Temperature not Found in external API response."));
             log.debug("Found air temperature in external API response {}:", getTemperatureOutResponse);
@@ -63,6 +65,7 @@ public class GetTemperatureFromExtApiAdapter implements GetTemperatureFromExtApi
         var urlWeatherApi = weatherApiConfig.getWeatherUrl() + "?lat="+ latitude + "&lon=" + longitude;
 
         var fullResponse = restTemplate.exchange("http://localhost:20000/external", HttpMethod.GET, entity, String.class).getBody();
+//        var fullResponse = restTemplate.exchange(urlWeatherApi, HttpMethod.GET, entity, String.class).getBody();
 
         JsonNode filteredResponse = objectMapper.readTree(fullResponse).at("/properties/timeseries");
 
@@ -71,8 +74,8 @@ public class GetTemperatureFromExtApiAdapter implements GetTemperatureFromExtApi
                 objectMapper.getTypeFactory().constructCollectionType(List.class, GetTemperatureOutResponse.class));
     }
 
-    private LocalDateTime getCurrentTimeInRoundHours() {
-        return LocalDateTime.now()
+    private LocalDateTime getCurrentTimeInRoundHours(Clock clock) {
+        return LocalDateTime.now(clock)
                 .truncatedTo(ChronoUnit.MINUTES)
                 .withMinute(0)
                 .withSecond(0);
