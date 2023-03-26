@@ -14,8 +14,8 @@ public class GetTemperatureOutResponseDeserializer extends JsonDeserializer<GetT
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
         JsonNode node = parser.getCodec().readTree(parser);
-        LocalDateTime time = LocalDateTime.parse(node.get("time").asText(), formatter);
-        double airTemperature = node.at("/data/instant/details/air_temperature").asDouble();
+        var time = LocalDateTime.parse(node.get("time").asText(), formatter);
+        var airTemperature = node.at("/data/instant/details/air_temperature").asDouble();
 
         return GetTemperatureOutResponse.builder()
                 .time(time)

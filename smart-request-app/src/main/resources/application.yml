@@ -17,13 +17,12 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password:
-    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1
+    url: jdbc:h2:mem:smart_app_db;DB_CLOSE_DELAY=-1
   liquibase:
     user: sa
     password:
-    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1
+    url: jdbc:h2:mem:smart_app_db;DB_CLOSE_DELAY=-1
     change-log: classpath:db/master.xml
-
   h2:
     console:
       enabled: true

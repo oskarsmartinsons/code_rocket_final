@@ -13,15 +13,18 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpHeaders;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.test.web.servlet.MockMvc;
+import org.apache.commons.io.IOUtils;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
 
+import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @TestExecutionListeners(value = {
@@ -55,19 +58,35 @@ public class BaseIntegrationTest {
         wireMockServer.resetAll();
     }
 
-    /*    protected String readJson(String jsonName) {
-            var resource = BaseIntegrationTest.class.getResourceAsStream("/json/" + jsonName);
-            try {
+    protected String readJson(String jsonName) {
+        var resource = BaseIntegrationTest.class.getResourceAsStream("/json/" + jsonName);
+        try {
                 return IOUtils.toString(resource, Charset.defaultCharset());
-            } catch (IOException e) {
+        } catch (IOException e) {
                 throw new RuntimeException(e);
-            }
-        }*/
+        }
+    }
+
     @Test
-    @DatabaseSetup(value = "classpath:dbunit/findCarByIdSuccess.xml")
-    @ExpectedDatabase(value = "classpath:dbunit/findCarByIdSuccess.xml", assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED)
-    void shouldFindCarById() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/cars/1"))
+   // @DatabaseSetup(value = "classpath:dbunit/temperature.xml")
+    @DatabaseSetup(value = "classpath:dbunit/locationWithTemperature.xml")
+
+    @ExpectedDatabase(value = "classpath:dbunit/locationWithTemperature.xml", assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED)
+    void shouldFindLocationByLatitudeAndLongitude() throws Exception {
+        var weatherApiResponse = readJson("weatherApiResponseSuccess.json");
+
+        stubExternalApiResponse(weatherApiResponse, 200);
+
+        mvc.perform(MockMvcRequestBuilders.get("/weather?lat=11.11&lon=33.33"))
                 .andExpect(status().isOk());
+    }
+
+    private static void stubExternalApiResponse(String weatherApiResponse, int status) {
+        wireMockServer.stubFor(get(urlEqualTo("/random")).willReturn(
+                aResponse()
+                        .withStatus(status)
+                        .withBody(weatherApiResponse)
+                        .withHeader(HttpHeaders.CONTENT_TYPE, "application/json")
+        ));
     }
 }

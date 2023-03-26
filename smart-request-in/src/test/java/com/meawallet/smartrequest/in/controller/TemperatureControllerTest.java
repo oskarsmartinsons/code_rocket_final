@@ -3,7 +3,6 @@ package com.meawallet.smartrequest.in.controller;
 import com.meawallet.smartrequest.core.port.in.GetLocationTemperatureUseCase;
 import com.meawallet.smartrequest.domain.Temperature;
 import com.meawallet.smartrequest.in.dto.GetTemperatureInResponse;
-import jakarta.validation.ConstraintViolationException;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -11,10 +10,7 @@ import org.mockito.junit.jupiter.MockitoSettings;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.MethodArgumentNotValidException;
-
 import java.time.LocalDateTime;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
@@ -25,25 +21,24 @@ public class TemperatureControllerTest {
     private GetLocationTemperatureUseCase getLocationTemperatureUseCase;
     @Mock
     private ConversionService conversionService;
-
     @InjectMocks
     private TemperatureController temperatureController;
 
     @Test
-    public void shouldReturnTemperatureWhenValidCoordinates() {
+    public void shouldReturnGetTemperatureInResponseWhenValidCoordinates() {
         var mockTemperature = temperature();
-        var expectedTemperatureInResponse = response();
+        var expectedResponse = response();
 
         when(getLocationTemperatureUseCase.getTemperatureByCoordinates(any(), any()))
                 .thenReturn(mockTemperature);
         when(conversionService.convert(mockTemperature, GetTemperatureInResponse.class))
                 .thenReturn(response());
 
-        ResponseEntity<GetTemperatureInResponse> actualTemperatureInResponse = temperatureController.getLocationTemperatureByCoordinates(any(), any());
+        ResponseEntity<GetTemperatureInResponse> actualResponse = temperatureController.getLocationTemperatureByCoordinates(any(), any());
 
-        assertEquals(HttpStatus.OK, actualTemperatureInResponse.getStatusCode());
-        assertNotNull(actualTemperatureInResponse.getBody());
-        assertEquals(expectedTemperatureInResponse, actualTemperatureInResponse.getBody());
+        assertEquals(HttpStatus.OK, actualResponse.getStatusCode());
+        assertNotNull(actualResponse.getBody());
+        assertEquals(expectedResponse, actualResponse.getBody());
     }
 
     private Temperature temperature() {
@@ -57,15 +52,6 @@ public class TemperatureControllerTest {
     private  GetTemperatureInResponse response() {
         return new GetTemperatureInResponse(temperature().getTemperature(), temperature().getTemperatureAt());
     }
-
-//    @Test
-//    public void getLocationTemperatureByCoordinates_withNullLatitude_shouldThrowException() {
-//        assertThrows(MethodArgumentNotValidException.class, () -> {
-//            temperatureController.getLocationTemperatureByCoordinates(10000.7, -74.005974);
-//        });
-//    }
-
-
 }
 
 

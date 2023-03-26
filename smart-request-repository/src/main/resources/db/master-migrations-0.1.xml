@@ -12,7 +12,7 @@
             <column name="lat" type="DOUBLE">
                 <constraints nullable="false"/>
             </column>
-            <column name="LON" type="DOUBLE">
+            <column name="lon" type="DOUBLE">
                 <constraints nullable="false"/>
             </column>
         </createTable>
@@ -26,13 +26,13 @@
             <column name="temperature" type="DOUBLE">
                 <constraints nullable="false"/>
             </column>
-            <column name="temperature_at" type="DATE">
+            <column name="temperature_at" type="DATETIME">
                 <constraints nullable="false"/>
             </column>
-            <column name="created_at" type="DATE">
+            <column name="created_at" type="DATETIME">
                 <constraints nullable="false"/>
             </column>
-            <column name="expiration_date" type="DATE">
+            <column name="expiration_date" type="DATETIME">
                 <constraints nullable="false"/>
             </column>
         </createTable>

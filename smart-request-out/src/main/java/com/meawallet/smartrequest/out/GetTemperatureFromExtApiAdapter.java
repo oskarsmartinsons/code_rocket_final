@@ -13,6 +13,7 @@ import org.springframework.core.convert.ConversionService;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
@@ -34,10 +35,10 @@ public class GetTemperatureFromExtApiAdapter implements GetTemperatureFromExtApi
         try {
             var listOfGetTemperatureOutResponse = getResponseFromWeatherApi(latitude, longitude);
             var getTemperatureOutResponse =  listOfGetTemperatureOutResponse.stream()
-                    .filter(t->t.getTime().equals(getCurrentTimeInRoundHours()))
+                    .filter(response->response.getTime().equals(getCurrentTimeInRoundHours()))
                     .findFirst()
-                    .orElseThrow(()-> new RestClientException("Temperature in external API not Found."));
-            log.debug("Found air temperature in json response {}:", getTemperatureOutResponse);
+                    .orElseThrow(()-> new RestClientException("Temperature not Found in external API response."));
+            log.debug("Found air temperature in external API response {}:", getTemperatureOutResponse);
 
             return conversionService.convert(getTemperatureOutResponse, Temperature.class);
 
@@ -62,7 +63,7 @@ public class GetTemperatureFromExtApiAdapter implements GetTemperatureFromExtApi
 //                .toUri();
         var urlWeatherApi = weatherApiConfig.getWeatherUrl() + "?lat="+ latitude + "&lon=" + longitude;
 
-        var fullResponse = restTemplate.exchange(urlWeatherApi, HttpMethod.GET, entity, String.class).getBody();
+        var fullResponse = restTemplate.exchange("http://localhost:20000/random", HttpMethod.GET, entity, String.class).getBody();
 
         JsonNode filteredResponse = objectMapper.readTree(fullResponse).at("/properties/timeseries");
 
