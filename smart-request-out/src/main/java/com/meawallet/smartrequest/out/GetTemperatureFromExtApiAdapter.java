@@ -46,6 +46,7 @@ public class GetTemperatureFromExtApiAdapter implements GetTemperatureFromExtApi
         } catch (RestClientException restClientException) {
             log.error("Received error from weather API: {}", restClientException.getMessage());
             throw new RuntimeException(restClientException);
+
         } catch (IOException ioException) {
             log.error("Received error when parsed weather API response: {}", ioException.getMessage());
             throw new RuntimeException(ioException);
@@ -57,14 +58,8 @@ public class GetTemperatureFromExtApiAdapter implements GetTemperatureFromExtApi
         headers.set("User-Agent", weatherApiConfig.getUserAgent());
         HttpEntity<String> entity = new HttpEntity<>(null, headers);
 
-//        URI uri = UriComponentsBuilder.fromUriString(weatherApiConfig.getWeatherUrl())
-//                .queryParam("lat", 1.4)
-//                .queryParam("lon", 1.4)
-//                .build()
-//                .toUri();
         var urlWeatherApi = weatherApiConfig.getWeatherUrl() + "?lat="+ latitude + "&lon=" + longitude;
 
-//        var fullResponse = restTemplate.exchange("http://localhost:20000/external", HttpMethod.GET, entity, String.class).getBody();
         var fullResponse = restTemplate.exchange(urlWeatherApi, HttpMethod.GET, entity, String.class).getBody();
 
         JsonNode filteredResponse = objectMapper.readTree(fullResponse).at("/properties/timeseries");

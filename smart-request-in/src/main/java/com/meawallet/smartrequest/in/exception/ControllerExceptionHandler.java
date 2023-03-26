@@ -1,32 +1,25 @@
 package com.meawallet.smartrequest.in.exception;
 
+import com.meawallet.smartrequest.in.dto.ErrorResponse;
+import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import java.time.LocalDateTime;
 
 @RestControllerAdvice
 public class ControllerExceptionHandler {
+
     @ExceptionHandler
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public String handleExceptions(Exception e) {
-        return e.getMessage();
+    public ErrorResponse handle(Exception e) {
+        return new ErrorResponse(e.getMessage(), LocalDateTime.now());
     }
 
-    @ExceptionHandler(IllegalArgumentException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public String handleIllegalArgumentException(IllegalArgumentException e) {
-        return e.getMessage();
+    @ExceptionHandler
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse handleConstrainViolationExceptions (ConstraintViolationException e) {
+        return new ErrorResponse(e.getMessage(), LocalDateTime.now());
     }
-
-//    @ExceptionHandler(MethodArgumentNotValidException.class)
-//    public ResponseEntity<String> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
-//        BindingResult bindingResult = ex.getBindingResult();
-//        String errorMessage = "Validation error(s): ";
-//        for (FieldError fieldError : bindingResult.getFieldErrors()) {
-//            errorMessage += fieldError.getField() + " " + fieldError.getDefaultMessage() + ", ";
-//        }
-//        errorMessage = errorMessage.substring(0, errorMessage.length() - 2);
-//        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
-//    }
 }

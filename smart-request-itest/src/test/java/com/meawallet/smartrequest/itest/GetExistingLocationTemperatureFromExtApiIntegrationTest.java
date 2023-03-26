@@ -15,8 +15,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @DatabaseTearDown(value = "classpath:dbunit/empty_dataset.xml", type = DELETE_ALL)
 public class GetExistingLocationTemperatureFromExtApiIntegrationTest extends BaseIntegrationTest {
 
-    // Before run - update expected temperature in "temperatureFromExtApiNewLocationSuccess_ExpectedState.xml"
-    //              according to expected one in "externalApiResponseSuccess.json" file
+    // Before run - update expected temperature/timeRoundHours for id=1 in "temperatureFromExtApiForExistingLocationSuccess_ExpectedState.xml"
+    //              according to expected air_temperature in "externalApiResponseSuccess.json" file in current hour.
     @Test
     @DatabaseSetup(value = "classpath:dbunit/temperatureFromExtApiForExistingLocationSuccess_InitialState.xml")
     @ExpectedDatabase(value = "classpath:dbunit/temperatureFromExtApiForExistingLocationSuccess_ExpectedState.xml", assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED)

@@ -6,28 +6,36 @@ import com.github.springtestdbunit.annotation.ExpectedDatabase;
 import com.github.springtestdbunit.assertion.DatabaseAssertionMode;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static com.github.springtestdbunit.annotation.DatabaseOperation.DELETE_ALL;
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @DatabaseTearDown(value = "classpath:dbunit/empty_dataset.xml", type = DELETE_ALL)
-public class GetNewLocationTemperatureFromExtApiIntegrationTest extends BaseIntegrationTest {
+public class GetTemperatureNegativeFlowIntegrationTest extends BaseIntegrationTest{
 
-    // Before run - update expected temperature/timeRoundHours for id=1 in "temperatureFromExtApiForNewLocationSuccess_ExpectedState.xml"
-    //              according to expected air_temperature in "externalApiResponseSuccess.json" file in current hour.
     @Test
     @DatabaseSetup(value = "classpath:dbunit/empty_dataset.xml")
-    @ExpectedDatabase(value = "classpath:dbunit/temperatureFromExtApiForNewLocationSuccess_ExpectedState.xml", assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED)
-    void shouldReturnTemperatureFromExtApiForNewLocation() throws Exception {
-        var weatherApiResponse = readJson("externalApiResponseSuccess.json");
-        stubExternalApiResponse(weatherApiResponse, 200);
+    @ExpectedDatabase(value = "classpath:dbunit/empty_dataset.xml", assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED)
+    void shouldNotCreateLocationAndTemperatureIfExternalApiReturnError() throws Exception {
+        stubExternalApiResponse("", 400);
+
+        var response = readJson("getTemperatureResponse500Error_extApi400Error.json");
 
         mvc.perform(MockMvcRequestBuilders.get("/weather?lat=11.11&lon=33.33"))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.temperature").value("29.3"));
+                .andExpect(status().is5xxServerError())
+                .andExpect(content().json(response));
+    }
+
+    @Test
+    @ExpectedDatabase(value = "classpath:dbunit/empty_dataset.xml", assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED)
+    void shouldNotCreateLocationAndTemperatureIfIncorrectParameters() throws Exception {
+        var response = readJson("getTemperatureResponse400Error_LongitudeConstrainViolation.json");
+
+        mvc.perform(MockMvcRequestBuilders.get("/weather?lat=11.11&lon=333"))
+                .andExpect(status().is4xxClientError())
+                .andExpect(content().json(response));
     }
 
     private static void stubExternalApiResponse(String weatherApiResponse, int status) {

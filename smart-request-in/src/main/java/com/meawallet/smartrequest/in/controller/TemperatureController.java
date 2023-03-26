@@ -1,9 +1,6 @@
 package com.meawallet.smartrequest.in.controller;
 
 import com.meawallet.smartrequest.core.port.in.GetLocationTemperatureUseCase;
-//import com.meawallet.smartrequest.core.port.in.GetLocationUseCase;
-//import com.meawallet.smartrequest.core.port.in.SaveLocationUseCase;
-//import com.meawallet.smartrequest.domain.Location;
 import com.meawallet.smartrequest.in.dto.GetTemperatureInResponse;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.DecimalMax;
@@ -21,23 +18,9 @@ import org.springframework.web.bind.annotation.*;
 @Validated
 @AllArgsConstructor
 public class TemperatureController {
-  //  private final GetLocationUseCase getLocationUseCase;
-   // private final SaveLocationUseCase saveLocationUseCase;
     private final GetLocationTemperatureUseCase getLocationTemperatureUseCase;
-
     private final ConversionService conversionService;
 
-/*    @PostMapping(value = "/locations")
-    public void saveLocation(@RequestBody Location location) {
-        log.debug("Received save request for LOCATION: {}", location);
-        saveLocationUseCase.saveLocation(location);
-    }*/
-
-//    @GetMapping(value = "/locations/{id}")
-//    public Location getLocationById(@PathVariable Integer id) {
-//        log.debug("Received find LOCATION by id request: {}", id);
-//        return getLocationUseCase.getLocationById(id);
-//    }
     @GetMapping(value = "/weather")
     public ResponseEntity<GetTemperatureInResponse> getLocationTemperatureByCoordinates (
             @Valid
@@ -56,5 +39,4 @@ public class TemperatureController {
         var temperature = getLocationTemperatureUseCase.getTemperatureByCoordinates(latitude, longitude);
         return ResponseEntity.ok(conversionService.convert(temperature, GetTemperatureInResponse.class));
     }
-
 }
