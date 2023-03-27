@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 public class TemperatureToGetTemperatureInResponseConverter implements Converter<Temperature, GetTemperatureInResponse> {
     @Override
     public GetTemperatureInResponse convert(Temperature temperature) {
-        return new GetTemperatureInResponse(
-                temperature.getTemperature());
+        return new GetTemperatureInResponse(temperature.getTemperature());
     }
 }

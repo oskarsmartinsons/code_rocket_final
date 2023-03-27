@@ -35,12 +35,10 @@ public class BaseIntegrationTest {
     static void beforeAll() {
         wireMockServer.start();
     }
-
     @AfterAll
     static void afterAll() {
         wireMockServer.stop();
     }
-
     @BeforeEach
     void setUp(){wireMockServer.resetAll();}
 

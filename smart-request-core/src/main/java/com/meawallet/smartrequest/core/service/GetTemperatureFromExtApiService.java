@@ -23,7 +23,7 @@ public class GetTemperatureFromExtApiService implements GetTemperatureFromExtApi
     @Override
     public Temperature getTemperatureFromExtApi(Double latitude, Double longitude) {
         var temperature = getTemperatureFromExtApiPort.getTemperatureFromExtApi(latitude, longitude);
-        log.debug("Retrieved Temperature from 3rd party service: {}", temperature);
+        log.debug("Retrieved Temperature from external API: {}", temperature);
 
         var savedTemperature = saveTemperaturePort.saveTemperature(temperature);
 
