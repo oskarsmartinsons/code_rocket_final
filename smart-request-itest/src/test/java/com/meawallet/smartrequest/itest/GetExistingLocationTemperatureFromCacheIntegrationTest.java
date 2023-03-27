@@ -1,6 +1,7 @@
 package com.meawallet.smartrequest.itest;
 
 import com.github.springtestdbunit.annotation.DatabaseSetup;
+import com.github.springtestdbunit.annotation.DatabaseTearDown;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +11,10 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import javax.sql.DataSource;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import static com.github.springtestdbunit.annotation.DatabaseOperation.DELETE_ALL;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+@DatabaseTearDown(value = "classpath:dbunit/empty_dataset.xml", type = DELETE_ALL)
 public class GetExistingLocationTemperatureFromCacheIntegrationTest extends  BaseIntegrationTest{
     @Autowired
     private DataSource dataSource;
