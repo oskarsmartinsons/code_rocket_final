@@ -7,12 +7,14 @@ import com.github.springtestdbunit.assertion.DatabaseAssertionMode;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static com.github.springtestdbunit.annotation.DatabaseOperation.DELETE_ALL;
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DatabaseTearDown(value = "classpath:dbunit/empty_dataset.xml", type = DELETE_ALL)
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class GetExistingLocationTemperatureFromExtApiIntegrationTest extends BaseIntegrationTest {
 
     // Before run - update expected temperature/timeRoundHours for id=1 in "temperatureFromExtApiForExistingLocationSuccess_ExpectedState.xml"
@@ -27,7 +29,7 @@ public class GetExistingLocationTemperatureFromExtApiIntegrationTest extends Bas
         mvc.perform(MockMvcRequestBuilders.get("/weather?lat=11.11&lon=33.33"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.temperature").value("37.8"));
+                .andExpect(jsonPath("$.temperature").value("36.2"));
     }
 
     private static void stubExternalApiResponse(String weatherApiResponse, int status) {

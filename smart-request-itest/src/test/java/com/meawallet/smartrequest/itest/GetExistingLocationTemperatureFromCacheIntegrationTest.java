@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import javax.sql.DataSource;
 import java.time.LocalDateTime;
@@ -15,6 +16,7 @@ import static com.github.springtestdbunit.annotation.DatabaseOperation.DELETE_AL
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DatabaseTearDown(value = "classpath:dbunit/empty_dataset.xml", type = DELETE_ALL)
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class GetExistingLocationTemperatureFromCacheIntegrationTest extends  BaseIntegrationTest{
     @Autowired
     private DataSource dataSource;

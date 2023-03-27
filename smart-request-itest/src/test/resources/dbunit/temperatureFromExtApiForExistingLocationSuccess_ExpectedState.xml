@@ -6,8 +6,8 @@
     />
     <PUBLIC.temperatures
             id="1"
-            temperature="37.8"
-            temperature_at="2023-03-27 12:00:00"
+            temperature="36.2"
+            temperature_at="2023-03-27 15:00:00"
     />
     <PUBLIC.locations
             id="1"
