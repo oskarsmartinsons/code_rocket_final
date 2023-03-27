@@ -1,4 +1,4 @@
-package com.meawallet.smartrequest.conf;
+package com.meawallet.smartrequest.config;
 
 import com.github.springtestdbunit.bean.DatabaseConfigBean;
 import com.github.springtestdbunit.bean.DatabaseDataSourceConnectionFactoryBean;
