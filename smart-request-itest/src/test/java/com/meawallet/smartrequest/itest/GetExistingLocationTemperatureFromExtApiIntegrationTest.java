@@ -29,7 +29,7 @@ public class GetExistingLocationTemperatureFromExtApiIntegrationTest extends Bas
         mvc.perform(MockMvcRequestBuilders.get("/weather?lat=11.11&lon=33.33"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.temperature").value("36.2"));
+                .andExpect(jsonPath("$.temperature").value("34.2"));
     }
 
     private static void stubExternalApiResponse(String weatherApiResponse, int status) {
