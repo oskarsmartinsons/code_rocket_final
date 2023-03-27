@@ -13,7 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @DatabaseTearDown(value = "classpath:dbunit/empty_dataset.xml", type = DELETE_ALL)
-public class GetTemperatureNegativeFlowIntegrationTest extends BaseIntegrationTest{
+public class GetTemperatureNegativePathIntegrationTest extends BaseIntegrationTest{
 
     @Test
     @DatabaseSetup(value = "classpath:dbunit/empty_dataset.xml")

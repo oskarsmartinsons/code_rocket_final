@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoSettings;
-import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
@@ -22,16 +21,14 @@ class TemperatureToGetTemperatureInResponseConverterTest {
         var expectedResponse = response();
 
         when(temperature.getTemperature()).thenReturn(33.33);
-        when(temperature.getTemperatureAt()).thenReturn(LocalDateTime.parse("2023-03-24T17:00:00"));
 
         var actualResponse  = converter.convert(temperature);
 
         assertNotNull(actualResponse);
         assertEquals(expectedResponse.temperature(), actualResponse.temperature());
-        assertEquals(expectedResponse.temperatureAt(), actualResponse.temperatureAt());
     }
 
     private GetTemperatureInResponse response() {
-        return new GetTemperatureInResponse(33.33, LocalDateTime.parse("2023-03-24T17:00:00"));
+        return new GetTemperatureInResponse(33.33);
     }
 }

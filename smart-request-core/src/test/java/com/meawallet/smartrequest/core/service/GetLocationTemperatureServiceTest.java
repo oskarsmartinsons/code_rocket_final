@@ -65,7 +65,7 @@ class GetLocationTemperatureServiceTest {
          return Temperature.builder()
                 .id(1)
                 .temperature(2.3)
-                .temperatureAt(LocalDateTime.parse("2023-03-24T17:24:21"))
+                .temperatureAt(LocalDateTime.parse("2023-03-24T17:00:00"))
                 .build();
     }
 }

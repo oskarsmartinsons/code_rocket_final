@@ -10,7 +10,6 @@ public class TemperatureToGetTemperatureInResponseConverter implements Converter
     @Override
     public GetTemperatureInResponse convert(Temperature temperature) {
         return new GetTemperatureInResponse(
-                temperature.getTemperature(),
-                temperature.getTemperatureAt());
+                temperature.getTemperature());
     }
 }
