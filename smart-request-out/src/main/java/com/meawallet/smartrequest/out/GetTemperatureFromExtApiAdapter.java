@@ -58,7 +58,7 @@ public class GetTemperatureFromExtApiAdapter implements GetTemperatureFromExtApi
         headers.set("User-Agent", weatherApiConfig.getUserAgent());
         HttpEntity<String> entity = new HttpEntity<>(null, headers);
 
-        var urlWeatherApi = weatherApiConfig.getWeatherUrl() + "?lat="+ latitude + "&lon=" + longitude;
+        String urlWeatherApi = String.format(weatherApiConfig.getWeatherUrl(), latitude, longitude);
 
         var fullResponse = restTemplate.exchange(urlWeatherApi, HttpMethod.GET, entity, String.class).getBody();
 

@@ -33,7 +33,7 @@ public class GetNewLocationTemperatureFromExtApiIntegrationTest extends BaseInte
     }
 
     private static void stubExternalApiResponse(String weatherApiResponse, int status) {
-        wireMockServer.stubFor(get(urlEqualTo("/external?lat=11.11&lon=33.33")).willReturn(
+        wireMockServer.stubFor(get(urlEqualTo("/external")).willReturn(
                 aResponse()
                         .withStatus(status)
                         .withBody(weatherApiResponse)
