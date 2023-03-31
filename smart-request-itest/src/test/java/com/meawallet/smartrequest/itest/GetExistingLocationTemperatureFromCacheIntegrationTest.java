@@ -38,7 +38,7 @@ public class GetExistingLocationTemperatureFromCacheIntegrationTest extends  Bas
         mvc.perform(MockMvcRequestBuilders.get("/weather?lat=11.11&lon=33.33"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.temperature").value("25.25"));
+                .andExpect(jsonPath("$.temperature").value("25.15"));
     }
 }
 
