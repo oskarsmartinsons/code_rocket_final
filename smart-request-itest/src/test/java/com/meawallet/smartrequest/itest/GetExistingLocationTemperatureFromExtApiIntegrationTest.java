@@ -4,9 +4,9 @@ import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.DatabaseTearDown;
 import com.github.springtestdbunit.annotation.ExpectedDatabase;
 import com.github.springtestdbunit.assertion.DatabaseAssertionMode;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.context.annotation.Primary;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
@@ -18,23 +18,22 @@ import java.time.ZoneId;
 
 import static com.github.springtestdbunit.annotation.DatabaseOperation.DELETE_ALL;
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
+import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DatabaseTearDown(value = "classpath:dbunit/empty_dataset.xml", type = DELETE_ALL)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class GetExistingLocationTemperatureFromExtApiIntegrationTest extends BaseIntegrationTest {
-    @TestConfiguration
-    static class CustomClockConfiguration {
-        @Primary
-        //   @MockBean
-        public Clock clock() {
-            Instant customInstant = Instant.parse("2023-03-27T17:00:00Z"); // replace with your desired instant
-            return Clock.fixed(customInstant, ZoneId.of("UTC"));
-        }
+    @MockBean
+    private Clock clock;
+
+    @BeforeEach
+    void setupClock() {
+        Instant customInstant = Instant.parse("2023-03-27T17:00:00Z");
+        given(clock.instant()).willReturn(customInstant);
+        given(clock.getZone()).willReturn(ZoneId.of("UTC"));
     }
 
-    // Before run - update expected temperature/timeRoundHours for id=1 in "temperatureFromExtApiForExistingLocationSuccess_ExpectedState.xml"
-    //              according to expected air_temperature in "externalApiResponseSuccess.json" file in current hour.
     @Test
     @DatabaseSetup(value = "classpath:dbunit/temperatureFromExtApiForExistingLocationSuccess_InitialState.xml")
     @ExpectedDatabase(value = "classpath:dbunit/temperatureFromExtApiForExistingLocationSuccess_ExpectedState.xml", assertionMode = DatabaseAssertionMode.NON_STRICT_UNORDERED)
