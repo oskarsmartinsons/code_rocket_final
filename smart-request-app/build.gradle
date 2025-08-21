@@ -1,13 +1,4 @@
-plugins {
-    id 'java'
-}
-
-group 'com.meawallet'
-version '0.0.1-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
+apply(plugin: 'org.springframework.boot')
 
 dependencies {
     implementation project(":smart-request-in")
@@ -15,8 +6,4 @@ dependencies {
     implementation project(":smart-request-out")
 
     implementation 'org.springframework.boot:spring-boot-starter-web:3.0.3'
-}
-
-test {
-    useJUnitPlatform()
 }
